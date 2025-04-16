@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="benefits.css">
+    <link rel="stylesheet" href="savings-banner.css">
+    <link rel="stylesheet" href="banner-fix.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>HiveAgileCTL - Optimiza tu empresa</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-glow"></div>
+                <h1>HiveAgileCTL</h1>
+            </div>
+            <p class="subtitle">Optimiza tu empresa: ahorra costes, tiempo y gana competitividad con soluciones listas para implementar.</p>
+            <div class="cta-buttons">
+                <a href="#savings-calculator" class="btn-premium">
+                    <i class="fas fa-calculator"></i>
+                    Calcula tu ahorro
+                </a>
+                <a href="#premium" class="btn-install">
+                    <i class="fas fa-crown"></i>
+                    Acceso Premium
+                </a>
+            </div>
+        </header>
+
+        <!-- Sección Comando de Instalación (Estructura de Terminal - Sin Sección Envoltorio) -->
+        <div id="install" class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <button class="copy-button" id="copyCommandFinal" title="Copiar comando">
+                    <i class="far fa-copy"></i>
+                    <span class="tooltip">Copiar comando</span>
+                </button>
+            </div>
+            <div class="terminal-content">
+                <pre><code id="installCommandFinal">/bin/bash -c "$(curl -fsSL https://hiveagilectl.hiveagile.com/)"</code></pre>
+            </div>
+            <div class="install-context">
+                <p>
+                    <strong>¿Cómo usar este comando?</strong><br>
+                    Ejecuta este comando en tu servidor VPS (Ubuntu, Debian, etc.) para instalar <strong>HiveAgileCTL</strong> y empezar a gestionar tus aplicaciones de forma sencilla y centralizada.<br>
+                    En minutos tendrás acceso al panel y a todas las funcionalidades premium de HiveAgileCTL.
+                </p>
+                <a href="#automatizacion" class="btn btn-secondary btn-video">
+                    <i class="fas fa-play-circle"></i> Ver demo en vídeo
+                </a>
+            </div>
+        </div>
+
+        <!-- Banner principal optimizado para ventas -->
+        <section class="hero-benefits">
+            <div class="savings-banner">
+              <div class="savings-inner">
+                <div class="top-row">
+                  <div class="savings-title">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h2>Reduce costes y gana tiempo en tu empresa</h2>
+                  </div>
+                  <a href="#savings-calculator" class="btn btn-primary">
+                    <i class="fas fa-calculator"></i>
+                    Calcula tu ahorro ahora
+                  </a>
+                </div>
+                <div class="savings-content">
+                  <p class="savings-desc">
+                    Soluciones para empresas y consultores que buscan maximizar la eficiencia, reducir gastos y liberar horas cada semana.<br>
+                    Descubre en segundos cuánto puedes ahorrar y cómo puedes implementar mejoras fácilmente.
+                  </p>
+                  <div class="savings-metrics">
+                    <div class="metric">
+                      <i class="fas fa-coins"></i>
+                      <span>Ahorra hasta un 30% en costes operativos</span>
+                    </div>
+                    <div class="metric">
+                      <i class="fas fa-clock"></i>
+                      <span>Recupera 10+ horas semanales</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <!-- Beneficios rápidos -->
+        <section class="quick-benefits">
+          <h3>¿Por qué elegirnos?</h3>
+          <ul>
+            <li><strong>Implementación rápida:</strong> Soluciones listas para usar, sin complicaciones técnicas.</li>
+            <li><strong>Resultados medibles:</strong> Calcula tu ahorro en tiempo y dinero desde el primer mes.</li>
+            <li><strong>Adaptado a tu empresa:</strong> Funciona para cualquier sector y tamaño de negocio.</li>
+            <li><strong>Soporte experto:</strong> Te acompañamos en todo el proceso, desde el diagnóstico hasta la optimización.</li>
+          </ul>
+        </section>
+
+        <!-- Cómo funciona -->
+        <section class="how-it-works">
+          <h3>¿Cómo funciona?</h3>
+          <div class="steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <p><strong>Calcula tu ahorro</strong><br>Usa nuestra calculadora y descubre el potencial de tu empresa.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <p><strong>Recibe tu plan personalizado</strong><br>Te mostramos las mejores acciones para reducir costes y liberar tiempo.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <p><strong>Implementa y ahorra</strong><br>Apóyate en nuestro equipo o tus propios consultores para implantar las mejoras.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="testimonials">
+          <h3>Empresas que ya ahorran con nosotros</h3>
+          <div class="testimonial-list">
+            <div class="testimonial">
+              <p>“En solo dos meses hemos reducido nuestros costes un 22% y ahora nuestro equipo es mucho más eficiente.”</p>
+              <span>— Laura G., CEO Pyme logística</span>
+            </div>
+            <div class="testimonial">
+              <p>“Como consultor, ahora puedo ofrecer a mis clientes resultados rápidos y tangibles. ¡Una herramienta imprescindible!”</p>
+              <span>— Javier M., Consultor de procesos</span>
+            </div>
+            <div class="testimonial">
+              <p>“No imaginaba que fuera tan fácil optimizar mi negocio. El acompañamiento ha sido clave.”</p>
+              <span>— Marta R., Comercio local</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Calculadora de ahorro -->
+        <section id="savings-calculator" class="savings-calculator-section">
+            <h2>Calcula tu ahorro y descubre alternativas más baratas</h2>
+            <p class="calculator-intro">Selecciona las herramientas que usas ahora, elige tu plan y número de usuarios, y descubre cuánto podrías ahorrar al pasarte a soluciones autoalojadas con HiveAgileCTL.</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h3>1. ¿Qué herramientas estás usando ahora?</h3>
+                    <div class="tool-search-container">
+                        <input type="text" id="tool-search" placeholder="Buscar herramienta (e.g., Slack, Jira, Holded)...">
+                    </div>
+                    <div id="tool-selector" class="tool-selector-list">
+                        <!-- Checkboxes de herramientas se cargarán aquí -->
+                    </div>
+                    
+                    <h3>2. Configura tus Planes y Usuarios</h3>
+                    <div id="selected-tools-config" class="selected-tools-config-area">
+                        <p class="config-placeholder">Selecciona herramientas de la lista para configurarlas aquí.</p>
+                        <!-- Configuraciones de herramientas seleccionadas se añadirán aquí -->
+                    </div>
+                </div>
+
+                <div class="calculator-results">
+                    <h3>3. Tu ahorro mensual estimado con HiveAgileCTL</h3>
+                    <div class="results-summary">
+                        <div class="result-item">
+                            <span class="label">Coste Actual:</span>
+                            <span id="commercial-cost">0.00 €</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Coste con HiveAgileCTL:</span>
+                            <span id="hiveagile-cost">~49.00 €</span>
+                            <small>*Estimación: 29€ Licencia + 20€ Servidor Básico</small>
+                        </div>
+                        <div class="savings-highlight">
+                            <p>¡Ahorro Mensual Estimado!</p>
+                            <span id="total-savings">0.00 €</span>
+                        </div>
+                    </div>
+                    
+                    <h3>4. Soluciones Recomendadas para Ti</h3>
+                    <div id="recommendations" class="recommendations-section">
+                        <div id="recommendations-list">
+                            <li class="recommendations-placeholder">Selecciona herramientas para ver alternativas.</li>
+                            <!-- Recomendaciones se añadirán aquí -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Características Clave (Agrupadas) -->
+        <section class="key-features-combined">
+            <div class="features-grid">
+                <div class="feature-main sovereignty">
+                    <i class="fas fa-lock"></i>
+                    <h2>Control Total de tu Infraestructura</h2>
+                    <p>Tus datos, tu infraestructura, tu control.</p>
+                    <div class="feature-points">
+                        <div class="point">
+                            <i class="fas fa-server"></i>
+                            <span>Datos en tus servidores</span>
+                        </div>
+                        <div class="point">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Control total de la privacidad</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-timeline">
+                    <h2>Automatización que te Ahorra Tiempo</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <i class="fas fa-rocket"></i>
+                            <h4>Instalación en 1 Click</h4>
+                        </div>
+                        <div class="timeline-item">
+                            <i class="fas fa-database"></i>
+                            <h4>Backups Automáticos</h4>
+                        </div>
+                        <div class="timeline-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Auto-mantenimiento</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="anti-saas-manifesto">
+                <div class="manifesto-content">
+                    <h2>Libérate del SaaS</h2>
+                    <div class="manifesto-grid">
+                        <div class="manifesto-item">
+                            <i class="fas fa-infinity"></i>
+                            <h4>Instalaciones Ilimitadas</h4>
+                            <p>Sin límites artificiales</p>
+                        </div>
+                        <div class="manifesto-item">
+                            <i class="fas fa-unlock"></i>
+                            <h4>Sin Vendor Lock-in</h4>
+                            <p>Eres dueño de tu infraestructura</p>
+                        </div>
+                        <div class="manifesto-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Escalabilidad Sin Límites</h4>
+                            <p>Crece sin costes extra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="community-highlights">
+                <div class="highlight-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Soporte 24/7</h3>
+                    <p>Día o noche, siempre encontrarás expertos listos para ayudarte. Respuestas rápidas y soluciones efectivas en cualquier momento.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Comunidad Elite</h3>
+                    <p>Únete a una red de profesionales. Comparte conocimientos, aprende de expertos y crece profesionalmente.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Recursos Premium</h3>
+                    <p>Acceso exclusivo a herramientas, scripts y automatizaciones creadas por la comunidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Demostración y Aplicaciones -->
+        <div class="demo-section" id="automatizacion">
+            <h2>Automatización en Acción</h2>
+            <div class="terminal-demo">
+                <script src="https://asciinema.org/a/715850.js" id="asciicast-715850" async="true"></script>
+            </div>
+        </div>
+
+        <section class="docker-apps-section">
+            <div class="apps-counter">
+                <div class="counter-content">
+                    <div class="counter-number" id="appsCounter">0</div>
+                    <div class="counter-text">Aplicaciones Docker<br>listas para instalar</div>
+                </div>
+                <div class="counter-glow"></div>
+            </div>
+
+            <div class="apps-filter">
+                <input type="text" id="searchApps" placeholder="Buscar aplicaciones...">
+                <select id="categoryFilter">
+                    <option value="">Todas las categorías</option>
+                     <!-- Opciones de categoría se añadirán aquí por JS -->
+                </select>
+            </div>
+
+            <div id="apps-grid" class="apps-container">
+                <!-- Las aplicaciones se cargarán aquí por JS -->
+            </div>
+
+            <div id="pagination-controls" class="pagination-container">
+                <!-- Los controles de paginación se añadirán aquí por JS -->
+            </div>
+        </section>
+
+        <!-- 5. Sección Premium Mejorada -->
+        <section id="premium" class="premium-section">
+            <div class="premium-hero">
+                <i class="fas fa-crown"></i>
+                <h2>Multiplica el valor de tu empresa con Premium</h2>
+                <p class="premium-desc">Accede a soporte prioritario, recursos exclusivos y una comunidad de expertos que te ayudarán a ahorrar más, crecer más rápido y mantenerte siempre a la vanguardia.</p>
+            </div>
+            <div class="premium-benefits">
+                <div class="premium-benefit">
+                    <i class="fas fa-headset"></i>
+                    <h3>Soporte Prioritario 24/7</h3>
+                    <p>Resuelve tus dudas y problemas en minutos, no en días. Nuestro equipo está siempre disponible para ti.</p>
+                </div>
+                <div class="premium-benefit">
+                    <i class="fas fa-gem"></i>
+                    <h3>Recursos y Automatizaciones Exclusivas</h3>
+                    <p>Accede a scripts, plantillas y herramientas premium para optimizar aún más tus procesos.</p>
+                </div>
+                <div class="premium-benefit">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Consultoría Personalizada</h3>
+                    <p>Recibe asesoría a medida para tu empresa o tus clientes, con recomendaciones prácticas y accionables.</p>
+                </div>
+                <div class="premium-benefit">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Networking de Alto Nivel</h3>
+                    <p>Conecta con otros empresarios, implementadores y expertos para compartir oportunidades y crecer juntos.</p>
+                </div>
+            </div>
+            <div class="premium-cta">
+                <div class="premium-pricing">
+                    <span class="price-tag">Desde solo <strong>29€/mes</strong></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Instalación (CTA Final) -->
+        <div id="install" class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <button class="copy-button" id="copyCommandFinal">
+                    <i class="far fa-copy"></i>
+                    <span class="tooltip">Copiar comando</span>
+                </button>
+            </div>
+            <div class="terminal-content">
+                <pre><code id="installCommandFinal">/bin/bash -c "$(curl -fsSL https://hiveagilectl.hiveagile.com/)"</code></pre>
+            </div>
+        </div>
+
+        <footer>
+            <h2>Únete a la revolución de la automatización</h2>
+            <p>Automatiza lo repetitivo. Controla lo esencial.</p>
+            <div class="cta-buttons">
+                <a href="#premium" class="btn-premium">
+                    <i class="fas fa-crown"></i>
+                    Comenzar con Premium
+                </a>
+            </div>
+            <a href="https://nimbox360.com" class="website-link">nimbox360.com</a>
+        </footer>
+    </div>
+
+    <script>
+        // Copiar comando
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyButtonFinal = document.getElementById('copyCommandFinal');
+            const commandTextFinal = document.getElementById('installCommandFinal');
+
+            if (copyButtonFinal && commandTextFinal) {
+                copyButtonFinal.addEventListener('click', function() {
+                    const commandText = commandTextFinal.innerText;
+                    navigator.clipboard.writeText(commandText).then(() => {
+                        const button = this;
+                        const originalIconHTML = button.querySelector('i').outerHTML; // Guardar solo el icono
+                        const tooltip = button.querySelector('.tooltip');
+                        const originalTooltipText = tooltip.textContent;
+                        
+                        button.querySelector('i').className = 'fas fa-check'; // Cambiar icono
+                        tooltip.textContent = '¡Copiado!'; // Cambiar tooltip
+                        button.classList.add('copied');
+
+                        setTimeout(() => {
+                            button.innerHTML = originalIconHTML + `<span class="tooltip">${originalTooltipText}</span>`; // Restaurar icono y tooltip original
+                            button.classList.remove('copied');
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Error al copiar comando de instalación final:', err);
+                        const tooltip = this.querySelector('.tooltip');
+                         if (tooltip) tooltip.textContent = 'Error al copiar';
+                        // Podrías añadir una clase de error temporal si quieres
+                        setTimeout(() => {
+                             if (tooltip) tooltip.textContent = 'Copiar comando';
+                        }, 2500);
+                    });
+                });
+            } else {
+                console.warn('No se encontraron elementos para el botón de copia final (copyCommandFinal o installCommandFinal).');
+            }
+        });
+    </script>
+
+    <script>
+        // Script para cargar aplicaciones Docker (AHORA ENVUELTO)
+        document.addEventListener('DOMContentLoaded', () => {
+            const appsGrid = document.getElementById('apps-grid');
+            const searchInput = document.getElementById('searchApps');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const paginationControls = document.getElementById('pagination-controls');
+            const appsCounterElement = document.getElementById('appsCounter');
+            let allApps = [];
+            let filteredApps = [];
+            const appsPerPage = 12; // Ajusta según necesites
+            let currentPage = 1;
+            const categories = new Set();
+
+            if (!appsGrid || !searchInput || !categoryFilter || !paginationControls || !appsCounterElement) {
+                console.error("Error: No se encontraron todos los elementos necesarios para la sección de aplicaciones.");
+                // Podrías mostrar un mensaje en la UI aquí si faltan elementos
+                return; // Salir si falta algo esencial
+            }
+
+            fetch('https://raw.githubusercontent.com/aitorroma/hiveagilectl-bin/refs/heads/main/dockers.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(apps => {
+                    allApps = apps;
+                    const totalApps = allApps.length;
+
+                    // Actualizar contador con efecto
+                    updateCounter(totalApps);
+
+                    // Poblar categorías y ordenar alfabéticamente
+                    allApps.forEach(app => categories.add(app.categoria));
+                    const sortedCategories = Array.from(categories).sort();
+                    sortedCategories.forEach(category => {
+                        const option = document.createElement('option');
+                        option.value = category;
+                        // Corregido: Mostrar solo el nombre de la categoría en el texto de la opción
+                        option.textContent = category;
+                        categoryFilter.appendChild(option);
+                    });
+
+                    // Filtrado inicial (mostrar todo)
+                    filterApps();
+
+                })
+                .catch(error => {
+                    console.error('Error fatal al cargar o procesar dockers.json:', error);
+                    appsGrid.innerHTML = '<p class="error-message">No se pudieron cargar las aplicaciones. Revisa la consola para más detalles.</p>';
+                    // Deshabilitar filtros si hay error
+                    searchInput.disabled = true;
+                    categoryFilter.disabled = true;
+                });
+
+            function updateCounter(targetNumber) {
+                let currentNumber = 0;
+                const increment = Math.max(1, Math.ceil(targetNumber / 50)); // Ajusta la velocidad
+                const interval = setInterval(() => {
+                    currentNumber += increment;
+                    if (currentNumber >= targetNumber) {
+                        currentNumber = targetNumber;
+                        clearInterval(interval);
+                    }
+                    appsCounterElement.textContent = currentNumber;
+                }, 20); // Intervalo más corto para animación más suave
+            }
+
+            function displayApps(page) {
+                appsGrid.innerHTML = ''; // Limpiar grid
+                currentPage = page;
+                const start = (page - 1) * appsPerPage;
+                const end = start + appsPerPage;
+                const paginatedApps = filteredApps.slice(start, end);
+
+                if (paginatedApps.length === 0 && filteredApps.length > 0) {
+                    // Si estamos en una página vacía pero hay resultados, ir a la última página con resultados
+                     const lastPageWithResults = Math.ceil(filteredApps.length / appsPerPage);
+                     displayApps(lastPageWithResults);
+                     return;
+                } else if (paginatedApps.length === 0 && filteredApps.length === 0) {
+                     appsGrid.innerHTML = '<p class="no-results">No se encontraron aplicaciones con los filtros actuales.</p>';
+                     renderPaginationControls(); // Renderizar paginación vacía
+                     return;
+                 }
+
+
+                paginatedApps.forEach((app, index) => {
+                    // console.log(`AppLoader: Rendering card for app: ${app.nombre}`);
+                    const card = document.createElement('div');
+                    card.className = 'app-card';
+                    const icon = typeof getCategoryIcon === 'function' ? getCategoryIcon(app.categoria) : 'fas fa-box-open'; // Icono por defecto
+                    // Generar el HTML de la tarjeta con la nueva estructura del comando
+                    card.innerHTML = `
+                        <div class="app-card-header">
+                            <i class="${icon} app-icon"></i>
+                            <span class="app-category">${app.categoria}</span>
+                        </div>
+                        <h3 class="app-name">${app.nombre}</h3>
+                        <p class="app-description">${app.descripcion || 'Sin descripción disponible.'}</p>
+                        <div class="app-card-footer">
+                           ${app.enlace_docker ? `<a href="${app.enlace_docker}" target="_blank" class="app-link docker-link"><i class="fab fa-docker"></i> Docker Hub</a>` : ''}
+                           ${app.enlace_github ? `<a href="${app.enlace_github}" target="_blank" class="app-link github-link"><i class="fab fa-github"></i> GitHub</a>` : ''}
+                           ${app.web ? `<a href="${app.web}" target="_blank" class="app-link web-link"><i class="fas fa-globe"></i> Web</a>` : ''}
+                         </div>
+                         <div class="install-command-container">
+                            <code>hiveagilectl install ${app.containername}</code>
+                            <button class="copy-command-button" data-containername="${app.containername}" title="Copiar comando">
+                                <i class="far fa-copy"></i>
+                            </button>
+                         </div>
+                    `;
+                     // Añadir event listener al NUEVO botón de copiar comando
+                    const copyButton = card.querySelector('.copy-command-button');
+                    if (copyButton) {
+                        copyButton.addEventListener('click', function(event) {
+                             event.stopPropagation(); // Evitar que otros clicks se disparen
+                             const containerName = this.dataset.containername;
+                             console.log(`AppLoader: copyInstallCommand called for container: ${containerName}`);
+                             if (containerName) {
+                                 copyInstallCommand(this, containerName); // La función copyInstallCommand ya hace lo correcto
+                             } else {
+                                 console.warn('AppLoader: No containername found for this app card:', app.nombre);
+                                 // Mostrar un feedback visual de error al usuario en el botón
+                                 this.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+                                 this.disabled = true; // Deshabilitar botón si hay error
+                             }
+                         });
+                    }
+                    appsGrid.appendChild(card);
+                });
+                renderPaginationControls();
+            }
+
+            function renderPaginationControls() {
+                paginationControls.innerHTML = '';
+                const pageCount = Math.ceil(filteredApps.length / appsPerPage);
+
+                if (pageCount <= 1) return; // No mostrar controles si hay 1 página o menos
+
+                 // Botón Primera página
+                 if (currentPage > 1) {
+                     const firstButton = document.createElement('button');
+                     firstButton.innerHTML = '&laquo; Primera';
+                     firstButton.addEventListener('click', () => displayApps(1));
+                     paginationControls.appendChild(firstButton);
+                 }
+
+                // Botón Anterior
+                if (currentPage > 1) {
+                    const prevButton = document.createElement('button');
+                    prevButton.textContent = '‹ Anterior';
+                    prevButton.addEventListener('click', () => displayApps(currentPage - 1));
+                    paginationControls.appendChild(prevButton);
+                }
+
+                // Números de página (lógica para mostrar elipses si hay muchas)
+                 const maxButtonsToShow = 5; // Máximo de botones numéricos a mostrar
+                 let startPage = Math.max(1, currentPage - Math.floor(maxButtonsToShow / 2));
+                 let endPage = Math.min(pageCount, startPage + maxButtonsToShow - 1);
+
+                 // Ajustar si estamos cerca del final
+                 if (endPage - startPage + 1 < maxButtonsToShow) {
+                     startPage = Math.max(1, endPage - maxButtonsToShow + 1);
+                 }
+
+                 if (startPage > 1) {
+                     const ellipsisStart = document.createElement('span');
+                     ellipsisStart.textContent = '...';
+                     ellipsisStart.className = 'pagination-ellipsis';
+                     paginationControls.appendChild(ellipsisStart);
+                 }
+
+                for (let i = startPage; i <= endPage; i++) {
+                    const pageButton = document.createElement('button');
+                    pageButton.textContent = i;
+                    if (i === currentPage) {
+                        pageButton.classList.add('active');
+                    }
+                    pageButton.addEventListener('click', () => displayApps(i));
+                    paginationControls.appendChild(pageButton);
+                }
+
+                 if (endPage < pageCount) {
+                     const ellipsisEnd = document.createElement('span');
+                     ellipsisEnd.textContent = '...';
+                     ellipsisEnd.className = 'pagination-ellipsis';
+                     paginationControls.appendChild(ellipsisEnd);
+                 }
+
+
+                // Botón Siguiente
+                if (currentPage < pageCount) {
+                    const nextButton = document.createElement('button');
+                    nextButton.textContent = 'Siguiente ›';
+                    nextButton.addEventListener('click', () => displayApps(currentPage + 1));
+                    paginationControls.appendChild(nextButton);
+                }
+
+                 // Botón Última página
+                 if (currentPage < pageCount) {
+                     const lastButton = document.createElement('button');
+                     lastButton.innerHTML = 'Última &raquo;';
+                     lastButton.addEventListener('click', () => displayApps(pageCount));
+                     paginationControls.appendChild(lastButton);
+                 }
+            }
+
+            // Función para obtener el icono de Font Awesome según la categoría (Placeholder)
+            // Deberías mover la implementación real de esta función aquí si no está global
+            function getCategoryIcon(category) {
+                const categoryLower = category.toLowerCase();
+                // Mapeo de categorías a iconos (ejemplo, amplíalo)
+                const iconMap = {
+                    'colaboración': 'fas fa-users',
+                    'productividad': 'fas fa-tasks',
+                    'desarrollo': 'fas fa-code',
+                    'monitorización': 'fas fa-chart-bar',
+                    'multimedia': 'fas fa-photo-video',
+                    'seguridad': 'fas fa-shield-alt',
+                    'utilidades': 'fas fa-wrench',
+                    'ofimática': 'fas fa-file-alt',
+                    'almacenamiento': 'fas fa-database',
+                    'backup': 'fas fa-save',
+                    'automatización': 'fas fa-robot',
+                     'vpn': 'fas fa-network-wired', // o fa-user-secret
+                     'gestión': 'fas fa-project-diagram', // o fa-sitemap
+                     'diseño': 'fas fa-palette', // o fa-drafting-compass
+                     'cms': 'fas fa-feather-alt', // o fa-newspaper
+                     'proxy': 'fas fa-server',
+                     'contraseñas': 'fas fa-key',
+                     'sincronización': 'fas fa-sync-alt',
+                     'virtualización': 'fas fa-desktop'
+                    // Añade más categorías e iconos aquí
+                };
+                return iconMap[categoryLower] || 'fas fa-box-open'; // Icono por defecto
+            }
+
+            // Función para copiar comando (Placeholder)
+             // Deberías mover la implementación real de esta función aquí si no está global
+             function copyInstallCommand(button, containername) {
+                 console.log(`AppLoader: copyInstallCommand called for container: ${containername}`);
+                 const command = `hiveagilectl install ${containername}`;
+                 console.log("AppLoader: Attempting to copy command:", command);
+                 navigator.clipboard.writeText(command).then(() => {
+                     console.log('AppLoader: Command copied successfully.');
+                     const originalHTML = button.innerHTML; // Guardar el icono original
+                     button.innerHTML = '<i class="fas fa-check"></i>'; // Cambiar a icono de check
+                     button.classList.add('copied');
+                     setTimeout(() => {
+                         button.innerHTML = originalHTML; // Restaurar icono original
+                         button.classList.remove('copied');
+                     }, 2000);
+                 }).catch(err => {
+                     console.error('AppLoader: Error copying install command:', err);
+                     const originalHTML = button.innerHTML;
+                     button.innerHTML = '<i class="fas fa-exclamation-triangle"></i>'; // Cambiar a icono de error
+                     button.classList.add('error');
+                      setTimeout(() => {
+                         button.innerHTML = originalHTML; // Restaurar icono original
+                         button.classList.remove('error');
+                     }, 2500);
+                 });
+             }
+
+            function filterApps() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+
+                filteredApps = allApps.filter(app => {
+                    const nameMatch = app.nombre.toLowerCase().includes(searchTerm);
+                    const descriptionMatch = app.descripcion?.toLowerCase().includes(searchTerm) || false;
+                    const categoryMatch = selectedCategory === '' || app.categoria === selectedCategory;
+                    return (nameMatch || descriptionMatch) && categoryMatch;
+                });
+
+                displayApps(1); // Mostrar la primera página de resultados
+            }
+
+            // Eventos de filtrado
+            searchInput.addEventListener('input', filterApps);
+            categoryFilter.addEventListener('change', filterApps);
+        });
+
+        // Script Calculadora (mantenido)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Datos de herramientas SaaS y alternativas (Mantener esta declaración)
+            const toolData = [
+                { id: 'holded', name: 'Holded', category: 'Facturación', pricing: { basic: 10, standard: 49.50, premium: 99.50, perUser: false }, alternatives: [
+                    { name: 'FacturaScripts', link: 'https://hub.docker.com/r/facturascripts/facturascripts' }, 
+                    { name: 'Invoice Ninja', link: 'https://hub.docker.com/r/invoiceninja/invoiceninja' }
+                ] },
+                { id: 'slack', name: 'Slack', category: 'Comunicación', pricing: { basic: 0, standard: 16.75, premium: 21.75, perUser: true }, alternatives: [
+                    { name: 'Element Web', link: 'https://hub.docker.com/r/vectorim/element-web' } 
+                    // Podrían añadirse otros como Mattermost si estuviera en dockers.json
+                ] },
+                { id: 'todoist', name: 'Todoist', category: 'Gestión de tareas', pricing: { basic: 0, standard: 3, premium: 5, perUser: true }, alternatives: [
+                    { name: 'Vikunja', link: 'https://hub.docker.com/r/vikunja/frontend' }
+                ] },
+                { id: 'asana', name: 'Asana', category: 'Gestión de proyectos', pricing: { basic: 0, standard: 7.74, premium: 15.30, perUser: true }, alternatives: [
+                    { name: 'Taiga', link: 'https://hub.docker.com/r/taigaio/taiga-front' }
+                     // Leantime, OpenProject no estaban en el json visto
+                ] },
+                { id: 'toggl', name: 'Toggl Track', category: 'Gestión del Tiempo', pricing: { basic: 0, standard: 9, premium: 18, perUser: true }, alternatives: [
+                    { name: 'Kimai', link: 'https://hub.docker.com/r/kimai/kimai2' }, // Mantener si no hay match directo
+                    { name: 'ActivityWatch', link: 'https://hub.docker.com/r/activitywatch/aw-server' } // Mantener si no hay match directo
+                ] },
+                { id: 'facturadirecta', name: 'FacturaDirecta', category: 'Facturación', pricing: { basic: 9.99, standard: 19.99, premium: 39.99, perUser: false }, alternatives: [
+                    { name: 'FacturaScripts', link: 'https://hub.docker.com/r/facturascripts/facturascripts' }, 
+                    { name: 'Invoice Ninja', link: 'https://hub.docker.com/r/invoiceninja/invoiceninja' }
+                ] },
+                { id: 'trello', name: 'Trello', category: 'Gestión de Proyectos / Kanban', pricing: { basic: 0, standard: 4.50, premium: 9.00, perUser: true }, alternatives: [
+                    // Manteniendo solo los que están en dockers.json de la lista original
+                    { name: 'Taiga', link: 'https://hub.docker.com/r/taigaio/taiga-front' },
+                    { name: 'Vikunja', link: 'https://hub.docker.com/r/vikunja/frontend' },
+                    { name: 'Planka', link: 'https://hub.docker.com/r/plankanban/planka' } // Nueva alternativa
+                ] },
+                { id: 'googlephotos', name: 'Google Photos', category: 'Almacenamiento de fotos', pricing: { basic: 0, standard: 1.99, premium: 9.99, perUser: false }, alternatives: [
+                    { name: 'Photoprism', link: 'https://hub.docker.com/r/photoprism/photoprism' }
+                ] },
+                { id: 'hubspot', name: 'HubSpot', category: 'CRM/Marketing', pricing: { basic: 0, standard: 792, premium: 3300, perUser: false }, alternatives: [
+                    { name: 'Astuto', link: 'https://hub.docker.com/r/riggraz/astuto' }, 
+                    { name: 'Mautic', link: 'https://hub.docker.com/_/mautic' }
+                ] },
+                { id: 'activecampaign', name: 'ActiveCampaign', category: 'Automatización de marketing', pricing: { basic: 9, standard: 49, premium: 149, perUser: false }, alternatives: [
+                    { name: 'Mautic', link: 'https://hub.docker.com/_/mautic' }
+                ] },
+                { id: 'mailchimp', name: 'Mailchimp', category: 'Email Marketing', pricing: { basic: 0, standard: 13, premium: 299, perUser: false }, alternatives: [
+                    { name: 'Mautic', link: 'https://hub.docker.com/_/mautic' }
+                     // Listmonk no estaba en el json visto
+                ] },
+                { id: 'auth0', name: 'Auth0', category: 'Autenticación', pricing: { basic: 0, standard: 23, premium: 23, perUser: false }, alternatives: [
+                    { name: 'Authelia', link: 'https://hub.docker.com/r/authelia/authelia' }
+                    // Keycloak, Authentik no estaban en el json visto
+                ] }, 
+                { id: 'okta', name: 'Okta', category: 'Gestión de identidades', pricing: { basic: 2, standard: 5, premium: 5, perUser: true }, alternatives: [
+                     { name: 'Authelia', link: 'https://hub.docker.com/r/authelia/authelia' }
+                ] },
+                { id: 'acronis', name: 'Acronis', category: 'Backup y seguridad', pricing: { basic: 4.17, standard: 6.67, premium: 8.33, perUser: false }, alternatives: [
+                    { name: 'Duplicati', link: 'https://hub.docker.com/r/linuxserver/duplicati' },
+                    { name: 'Password Pusher', link: 'https://hub.docker.com/r/pglombardo/pwpush-ephemeral' } // pwpush
+                ] }, 
+                { id: 'github', name: 'GitHub Team', category: 'Control de versiones', pricing: { basic: 0, standard: 4, premium: 21, perUser: true }, alternatives: [
+                    { name: 'GitLab', link: 'https://hub.docker.com/r/gitlab/gitlab-ce' }
+                    // Gitea no estaba en el json visto
+                ] },
+                { id: 'bitbucket', name: 'Bitbucket', category: 'Control de versiones', pricing: { basic: 0, standard: 3, premium: 6, perUser: true }, alternatives: [
+                    { name: 'GitLab', link: 'https://hub.docker.com/r/gitlab/gitlab-ce' }
+                ] },
+                { id: 'jira', name: 'Jira', category: 'Gestión de proyectos', pricing: { basic: 0, standard: 7.74, premium: 15.30, perUser: true }, alternatives: [
+                    { name: 'Taiga', link: 'https://hub.docker.com/r/taigaio/taiga-front' }
+                     // Leantime, OpenProject no estaban en el json visto
+                ] },
+                { id: 'substack', name: 'Substack', category: 'Blogging', pricing: { basic: 0, standard: 0, premium: 0, perUser: false }, alternatives: [
+                    { name: 'Ghost', link: 'https://hub.docker.com/r/ghost' }
+                ] },
+                { id: 'medium', name: 'Medium', category: 'Plataforma de publicación', pricing: { basic: 0, standard: 5, premium: 5, perUser: false }, alternatives: [
+                     { name: 'Ghost', link: 'https://hub.docker.com/_/ghost' }
+                    // WordPress no estaba en el json visto
+                ] },
+                { id: 'googleanalytics', name: 'Google Analytics', category: 'Análisis web', pricing: { basic: 0, standard: 0, premium: 8333, perUser: false }, alternatives: [
+                    { name: 'Plausible Analytics', link: 'https://hub.docker.com/r/plausible/analytics' }
+                     // Matomo no estaba en el json visto
+                ] }, 
+                { id: 'confluence', name: 'Confluence', category: 'Documentación/Wiki', pricing: { basic: 0, standard: 5, premium: 10, perUser: true }, alternatives: [
+                    { name: 'BookStack', link: 'https://hub.docker.com/r/linuxserver/bookstack' },
+                    { name: 'Diagrams.net', link: 'https://hub.docker.com/r/jgraph/drawio' }
+                ] },
+                { id: 'googledrive', name: 'Google Drive', category: 'Compartir archivos', pricing: { basic: 0, standard: 9.99, premium: 16.99, perUser: true }, alternatives: [
+                    { name: 'Nextcloud', link: 'https://hub.docker.com/_/nextcloud' }, // Mantener si no hay match directo
+                    { name: 'Seafile', link: 'https://hub.docker.com/r/seafileltd/seafile' } // Mantener si no hay match directo
+                ] },
+                { id: 'dropbox', name: 'Dropbox Business', category: 'Compartir archivos', pricing: { basic: 0, standard: 12, premium: 18, perUser: true }, alternatives: [
+                    { name: 'Nextcloud', link: 'https://hub.docker.com/_/nextcloud' }, // Mantener si no hay match directo
+                    { name: 'Seafile', link: 'https://hub.docker.com/r/seafileltd/seafile' } // Mantener si no hay match directo
+                ] },
+                { id: 'airtable', name: 'Airtable', category: 'Base de datos/Hoja de cálculo', pricing: { basic: 0, standard: 18, premium: 40.50, perUser: true }, alternatives: [
+                    { name: 'NocoDB', link: 'https://hub.docker.com/r/nocodb/nocodb' }, // Mantener si no hay match directo
+                    { name: 'Baserow', link: 'https://hub.docker.com/r/baserow/baserow' } // Mantener si no hay match directo
+                ] },
+                { id: 'typeform', name: 'Typeform', category: 'Formularios y Encuestas', pricing: { basic: 21, standard: 46, premium: 75, perUser: false }, alternatives: [
+                    { name: 'SurveyJS', link: 'https://hub.docker.com/r/surveyjs/surveyjs' }, // Mantener si no hay match directo
+                    { name: 'OhMyForm', link: 'https://hub.docker.com/r/ohmyform/ohmyform' } // Mantener si no hay match directo
+                ] },
+                { id: 'calendly', name: 'Calendly', category: 'Programación de Reuniones', pricing: { basic: 0, standard: 9.00, premium: 14.40, perUser: true }, alternatives: [
+                    { name: 'Cal.com', link: 'https://hub.docker.com/r/calcom/cal.com' } // Mantener si no hay match directo
+                ] },
+                 { id: 'canva', name: 'Canva Pro', category: 'Diseño Gráfico', pricing: { basic: 0, standard: 11.99, premium: 11.99, perUser: true }, alternatives: [
+                    { name: 'Diagrams.net', link: 'https://hub.docker.com/r/jgraph/drawio' }
+                    // Penpot no estaba en el json visto
+                ] }
+            ];
+            
+            const toolSelector = document.getElementById('tool-selector');
+            const toolSearch = document.getElementById('tool-search');
+            const selectedToolsConfig = document.getElementById('selected-tools-config');
+            const commercialCostEl = document.getElementById('commercial-cost');
+            const totalSavingsEl = document.getElementById('total-savings');
+            const recommendationsList = document.getElementById('recommendations-list');
+            const configPlaceholder = selectedToolsConfig.querySelector('.config-placeholder');
+            const recommendationsPlaceholder = recommendationsList.querySelector('.recommendations-placeholder');
+            
+            const hiveAgileCost = 49; // Coste fijo estimado de HiveAgile + Hosting básico
+            let selectedTools = {}; // Almacena la configuración de las herramientas seleccionadas
+
+            // --- 1. Poblar lista de herramientas --- 
+            function populateToolList(filter = '') {
+                toolSelector.innerHTML = '';
+                const filteredData = toolData.filter(tool => 
+                    tool.name.toLowerCase().includes(filter.toLowerCase()) || 
+                    tool.category.toLowerCase().includes(filter.toLowerCase())
+                );
+
+                filteredData.sort((a, b) => a.name.localeCompare(b.name)).forEach(tool => {
+                    const div = document.createElement('div');
+                    div.className = 'tool-item';
+                    // Mantener el estado del checkbox si ya estaba seleccionado
+                    const isChecked = selectedTools.hasOwnProperty(tool.id) ? 'checked' : '';
+                    div.innerHTML = `
+                        <input type="checkbox" id="tool-${tool.id}" data-tool-id="${tool.id}" ${isChecked}>
+                        <label for="tool-${tool.id}">${tool.name}</label>
+                        <span class="tool-category">${tool.category}</span>
+                    `;
+                    toolSelector.appendChild(div);
+                });
+
+                // Re-attach event listeners a los nuevos checkboxes
+                attachCheckboxListeners(); 
+            }
+
+            // Event listener para la búsqueda de herramientas
+            if (toolSearch) {
+                toolSearch.addEventListener('input', (e) => {
+                    populateToolList(e.target.value);
+                });
+            }
+
+            // --- Funciones que se añadirán en los siguientes pasos ---
+            function attachCheckboxListeners() { 
+                toolSelector.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.removeEventListener('change', handleToolSelection); // Evitar duplicados
+                    checkbox.addEventListener('change', handleToolSelection);
+                });
+            }
+            function handleToolSelection(event) { 
+                const checkbox = event.target;
+                const toolId = checkbox.dataset.toolId;
+                const tool = toolData.find(t => t.id === toolId);
+
+                if (!tool) return; // Salir si la herramienta no se encuentra
+
+                if (checkbox.checked) {
+                    addToolConfig(tool); 
+                    // Añadir a la lista de seleccionados con valores por defecto
+                    selectedTools[toolId] = { 
+                        plan: tool.pricing.standard !== undefined ? 'standard' : 'basic', // Default a standard si existe, sino basic
+                        users: 1 
+                    };
+                } else {
+                    removeToolConfig(toolId); 
+                    delete selectedTools[toolId];
+                }
+                updateCalculator(); 
+            }
+            function addToolConfig(tool) { 
+                if (!selectedToolsConfig) return;
+                configPlaceholder.style.display = 'none'; // Ocultar placeholder
+                const configDiv = document.createElement('div');
+                configDiv.className = 'config-item';
+                configDiv.id = `config-${tool.id}`;
+                
+                // Construir opciones de plan dinámicamente
+                let planOptions = '';
+                if (tool.pricing.basic !== undefined) planOptions += `<option value="basic">Plan Básico (${tool.pricing.basic}€)</option>`;
+                if (tool.pricing.standard !== undefined) planOptions += `<option value="standard" selected>Plan Estándar (${tool.pricing.standard}€)</option>`;
+                if (tool.pricing.premium !== undefined) planOptions += `<option value="premium">Plan Premium (${tool.pricing.premium}€)</option>`;
+                
+                // Comprobar si el plan 'standard' por defecto realmente existe
+                const defaultPlan = tool.pricing.standard !== undefined ? 'standard' : 'basic';
+                planOptions = planOptions.replace(`value="${defaultPlan}"`, `value="${defaultPlan}" selected`);
+
+                configDiv.innerHTML = `
+                    <label>${tool.name}</label>
+                    <select data-tool-id="${tool.id}" class="plan-selector">
+                        ${planOptions}
+                    </select>
+                    ${tool.pricing.perUser ? 
+                        `<label>Número de Usuarios:</label>
+                         <input type="number" data-tool-id="${tool.id}" class="user-input" value="1" min="1">` : 
+                        '<small>(Precio por empresa/fijo)</small>'
+                    }
+                `;
+                selectedToolsConfig.appendChild(configDiv);
+                attachConfigListeners(configDiv); 
+            }
+            function removeToolConfig(toolId) { 
+                const configDiv = document.getElementById(`config-${toolId}`);
+                if (configDiv) {
+                    configDiv.remove();
+                }
+                // Mostrar placeholder si ya no quedan herramientas seleccionadas
+                if (selectedToolsConfig && selectedToolsConfig.querySelectorAll('.config-item').length === 0) { 
+                    configPlaceholder.style.display = 'block';
+                }
+            }
+            function attachConfigListeners(configDiv) { 
+                // Escuchar cambios en el selector de plan
+                const planSelector = configDiv.querySelector('.plan-selector');
+                if (planSelector) {
+                    planSelector.removeEventListener('change', handleConfigChange);
+                    planSelector.addEventListener('change', handleConfigChange);
+                }
+                // Escuchar cambios en el input de usuarios (si aplica)
+                const userInput = configDiv.querySelector('.user-input');
+                if (userInput) {
+                    userInput.removeEventListener('input', handleConfigChange);
+                    userInput.removeEventListener('change', handleConfigChange); // También 'change' por si pegan valor
+                    userInput.addEventListener('input', handleConfigChange);
+                    userInput.addEventListener('change', handleConfigChange);
+                }
+            }
+            function handleConfigChange(event) { 
+                const element = event.target;
+                const toolId = element.dataset.toolId;
+                if (!selectedTools[toolId]) return; // Salir si la herramienta ya no está seleccionada
+
+                if (element.classList.contains('plan-selector')) {
+                    selectedTools[toolId].plan = element.value;
+                }
+                if (element.classList.contains('user-input')) {
+                    selectedTools[toolId].users = parseInt(element.value) || 1;
+                }
+                updateCalculator();
+            }
+            function calculateCommercialCost() { 
+                let totalCost = 0;
+                for (const toolId in selectedTools) {
+                    const tool = toolData.find(t => t.id === toolId);
+                    const config = selectedTools[toolId];
+                    // Asegurarse de que el plan seleccionado existe en los datos, si no usar el básico
+                    const planCost = tool.pricing[config.plan] !== undefined ? tool.pricing[config.plan] : (tool.pricing.basic !== undefined ? tool.pricing.basic : 0);
+                    
+                    if (tool.pricing.perUser) {
+                        totalCost += planCost * config.users;
+                    } else {
+                        // Para precios no basados en usuario, asegurarse de que el plan existe
+                         totalCost += planCost;
+                    }
+                }
+                return totalCost;
+            }
+            function updateResults() { 
+                const commercialCost = calculateCommercialCost();
+                const savings = commercialCost - hiveAgileCost;
+                
+                commercialCostEl.textContent = `${commercialCost.toFixed(2)} €`;
+                totalSavingsEl.textContent = `${(savings > 0 ? savings : 0).toFixed(2)} €`; // Mostrar 0 si el ahorro es negativo
+
+                // Añadir clase si hay ahorro para posible feedback visual
+                totalSavingsEl.closest('.savings-highlight').classList.toggle('has-savings', savings > 0);
+            }
+            function updateRecommendations() { 
+                recommendationsList.innerHTML = '';
+                let hasRecommendations = false;
+
+                for (const toolId in selectedTools) {
+                    const tool = toolData.find(t => t.id === toolId);
+                    if (tool && tool.alternatives && tool.alternatives.length > 0) {
+                        hasRecommendations = true;
+                        tool.alternatives.forEach(alt => {
+                            const li = document.createElement('li');
+                            li.className = 'recommendation-item'; // Usar la clase correcta
+                            li.innerHTML = `
+                                <div class="recommendation-icon">
+                                    <i class="fas fa-rocket"></i> 
+                                </div>
+                                <div class="recommendation-details">
+                                    <strong>${alt.name}</strong>
+                                    <span>Alternativa a ${tool.name}</span>
+                                    <a href="${alt.link}" target="_blank" rel="noopener noreferrer">Ver en Docker Hub/Docs <i class="fas fa-external-link-alt fa-xs"></i></a>
+                                </div>
+                            `;
+                            recommendationsList.appendChild(li);
+                        });
+                    }
+                }
+
+                // Mostrar/ocultar placeholder
+                recommendationsPlaceholder.style.display = hasRecommendations ? 'none' : 'block';
+            }
+            function updateCalculator() { 
+                updateResults();
+                updateRecommendations();
+            }
+
+            // Inicializar la lista de herramientas
+            populateToolList();
+        });
+    </script>
+</body>
+</html>
