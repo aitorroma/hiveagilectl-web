@@ -520,29 +520,27 @@
                            ${app.enlace_github ? `<a href="${app.enlace_github}" target="_blank" class="app-link github-link"><i class="fab fa-github"></i> GitHub</a>` : ''}
                            ${app.web ? `<a href="${app.web}" target="_blank" class="app-link web-link"><i class="fas fa-globe"></i> Web</a>` : ''}
                          </div>
-                         <div class="install-command-container">
+                         <div class="install-command-container" data-containername="${app.containername}">
                             <code>hiveagilectl install ${app.containername}</code>
                             <button class="copy-command-button" data-containername="${app.containername}" title="Copiar comando">
                                 <i class="far fa-copy"></i>
                             </button>
                          </div>
                     `;
-                     // Añadir event listener al NUEVO botón de copiar comando
-                    const copyButton = card.querySelector('.copy-command-button');
-                    if (copyButton) {
-                        copyButton.addEventListener('click', function(event) {
-                             event.stopPropagation(); // Evitar que otros clicks se disparen
-                             const containerName = this.dataset.containername;
-                             console.log(`AppLoader: copyInstallCommand called for container: ${containerName}`);
-                             if (containerName) {
-                                 copyInstallCommand(this, containerName); // La función copyInstallCommand ya hace lo correcto
-                             } else {
-                                 console.warn('AppLoader: No containername found for this app card:', app.nombre);
-                                 // Mostrar un feedback visual de error al usuario en el botón
-                                 this.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
-                                 this.disabled = true; // Deshabilitar botón si hay error
-                             }
-                         });
+                    // Ahora el evento va en el contenedor, no solo en el botón
+                    const installContainer = card.querySelector('.install-command-container');
+                    if (installContainer) {
+                        installContainer.addEventListener('click', function(event) {
+                            event.stopPropagation();
+                            const containerName = this.dataset.containername;
+                            if (containerName) {
+                                copyInstallCommand(this, containerName);
+                            } else {
+                                console.warn('AppLoader: No containername found for this app card:', app.nombre);
+                                this.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+                                this.classList.add('error');
+                            }
+                        });
                     }
                     appsGrid.appendChild(card);
                 });
@@ -656,29 +654,42 @@
             // Función para copiar comando (Placeholder)
              // Deberías mover la implementación real de esta función aquí si no está global
              function copyInstallCommand(button, containername) {
-                 console.log(`AppLoader: copyInstallCommand called for container: ${containername}`);
-                 const command = `hiveagilectl install ${containername}`;
-                 console.log("AppLoader: Attempting to copy command:", command);
-                 navigator.clipboard.writeText(command).then(() => {
-                     console.log('AppLoader: Command copied successfully.');
-                     const originalHTML = button.innerHTML; // Guardar el icono original
-                     button.innerHTML = '<i class="fas fa-check"></i>'; // Cambiar a icono de check
-                     button.classList.add('copied');
-                     setTimeout(() => {
-                         button.innerHTML = originalHTML; // Restaurar icono original
-                         button.classList.remove('copied');
-                     }, 2000);
-                 }).catch(err => {
-                     console.error('AppLoader: Error copying install command:', err);
-                     const originalHTML = button.innerHTML;
-                     button.innerHTML = '<i class="fas fa-exclamation-triangle"></i>'; // Cambiar a icono de error
-                     button.classList.add('error');
-                      setTimeout(() => {
-                         button.innerHTML = originalHTML; // Restaurar icono original
-                         button.classList.remove('error');
-                     }, 2500);
-                 });
-             }
+                if (!containername) {
+                    console.error('AppLoader: containername inválido:', containername);
+                    button.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+                    button.classList.add('error');
+                    setTimeout(() => {
+                        button.innerHTML = '<i class="far fa-copy"></i>';
+                        button.classList.remove('error');
+                    }, 2500);
+                    return;
+                }
+                const command = `hiveagilectl install ${containername}`;
+                console.log("AppLoader: Attempting to copy command:", command);
+                // Deshabilitar el botón temporalmente
+                button.disabled = true;
+                navigator.clipboard.writeText(command).then(() => {
+                    console.log('AppLoader: Command copied successfully.');
+                    const originalHTML = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-check"></i>';
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.innerHTML = originalHTML;
+                        button.classList.remove('copied');
+                        button.disabled = false;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('AppLoader: Error copying install command:', err);
+                    const originalHTML = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+                    button.classList.add('error');
+                    setTimeout(() => {
+                        button.innerHTML = originalHTML;
+                        button.classList.remove('error');
+                        button.disabled = false;
+                    }, 2500);
+                });
+            }
 
             function filterApps() {
                 const searchTerm = searchInput.value.toLowerCase();
@@ -701,112 +712,20 @@
 
         // Script Calculadora (mantenido)
         document.addEventListener('DOMContentLoaded', () => {
-            // Datos de herramientas SaaS y alternativas (Mantener esta declaración)
-            const toolData = [
-                { id: 'holded', name: 'Holded', category: 'Facturación', pricing: { basic: 10, standard: 49.50, premium: 99.50, perUser: false }, alternatives: [
-                    { name: 'FacturaScripts', link: 'https://hub.docker.com/r/facturascripts/facturascripts' }, 
-                    { name: 'Invoice Ninja', link: 'https://hub.docker.com/r/invoiceninja/invoiceninja' }
-                ] },
-                { id: 'slack', name: 'Slack', category: 'Comunicación', pricing: { basic: 0, standard: 16.75, premium: 21.75, perUser: true }, alternatives: [
-                    { name: 'Element Web', link: 'https://hub.docker.com/r/vectorim/element-web' } 
-                    // Podrían añadirse otros como Mattermost si estuviera en dockers.json
-                ] },
-                { id: 'todoist', name: 'Todoist', category: 'Gestión de tareas', pricing: { basic: 0, standard: 3, premium: 5, perUser: true }, alternatives: [
-                    { name: 'Vikunja', link: 'https://hub.docker.com/r/vikunja/frontend' }
-                ] },
-                { id: 'asana', name: 'Asana', category: 'Gestión de proyectos', pricing: { basic: 0, standard: 7.74, premium: 15.30, perUser: true }, alternatives: [
-                    { name: 'Taiga', link: 'https://hub.docker.com/r/taigaio/taiga-front' }
-                     // Leantime, OpenProject no estaban en el json visto
-                ] },
-                { id: 'toggl', name: 'Toggl Track', category: 'Gestión del Tiempo', pricing: { basic: 0, standard: 9, premium: 18, perUser: true }, alternatives: [
-                    { name: 'Kimai', link: 'https://hub.docker.com/r/kimai/kimai2' }, // Mantener si no hay match directo
-                    { name: 'ActivityWatch', link: 'https://hub.docker.com/r/activitywatch/aw-server' } // Mantener si no hay match directo
-                ] },
-                { id: 'facturadirecta', name: 'FacturaDirecta', category: 'Facturación', pricing: { basic: 9.99, standard: 19.99, premium: 39.99, perUser: false }, alternatives: [
-                    { name: 'FacturaScripts', link: 'https://hub.docker.com/r/facturascripts/facturascripts' }, 
-                    { name: 'Invoice Ninja', link: 'https://hub.docker.com/r/invoiceninja/invoiceninja' }
-                ] },
-                { id: 'trello', name: 'Trello', category: 'Gestión de Proyectos / Kanban', pricing: { basic: 0, standard: 4.50, premium: 9.00, perUser: true }, alternatives: [
-                    // Manteniendo solo los que están en dockers.json de la lista original
-                    { name: 'Taiga', link: 'https://hub.docker.com/r/taigaio/taiga-front' },
-                    { name: 'Vikunja', link: 'https://hub.docker.com/r/vikunja/frontend' },
-                    { name: 'Planka', link: 'https://hub.docker.com/r/plankanban/planka' } // Nueva alternativa
-                ] },
-                { id: 'googlephotos', name: 'Google Photos', category: 'Almacenamiento de fotos', pricing: { basic: 0, standard: 1.99, premium: 9.99, perUser: false }, alternatives: [
-                    { name: 'Photoprism', link: 'https://hub.docker.com/r/photoprism/photoprism' }
-                ] },
-                { id: 'hubspot', name: 'HubSpot', category: 'CRM/Marketing', pricing: { basic: 0, standard: 792, premium: 3300, perUser: false }, alternatives: [
-                    { name: 'Astuto', link: 'https://hub.docker.com/r/riggraz/astuto' }, 
-                    { name: 'Mautic', link: 'https://hub.docker.com/_/mautic' }
-                ] },
-                { id: 'activecampaign', name: 'ActiveCampaign', category: 'Automatización de marketing', pricing: { basic: 9, standard: 49, premium: 149, perUser: false }, alternatives: [
-                    { name: 'Mautic', link: 'https://hub.docker.com/_/mautic' }
-                ] },
-                { id: 'mailchimp', name: 'Mailchimp', category: 'Email Marketing', pricing: { basic: 0, standard: 13, premium: 299, perUser: false }, alternatives: [
-                    { name: 'Mautic', link: 'https://hub.docker.com/_/mautic' }
-                     // Listmonk no estaba en el json visto
-                ] },
-                { id: 'auth0', name: 'Auth0', category: 'Autenticación', pricing: { basic: 0, standard: 23, premium: 23, perUser: false }, alternatives: [
-                    { name: 'Authelia', link: 'https://hub.docker.com/r/authelia/authelia' }
-                    // Keycloak, Authentik no estaban en el json visto
-                ] }, 
-                { id: 'okta', name: 'Okta', category: 'Gestión de identidades', pricing: { basic: 2, standard: 5, premium: 5, perUser: true }, alternatives: [
-                     { name: 'Authelia', link: 'https://hub.docker.com/r/authelia/authelia' }
-                ] },
-                { id: 'acronis', name: 'Acronis', category: 'Backup y seguridad', pricing: { basic: 4.17, standard: 6.67, premium: 8.33, perUser: false }, alternatives: [
-                    { name: 'Duplicati', link: 'https://hub.docker.com/r/linuxserver/duplicati' },
-                    { name: 'Password Pusher', link: 'https://hub.docker.com/r/pglombardo/pwpush-ephemeral' } // pwpush
-                ] }, 
-                { id: 'github', name: 'GitHub Team', category: 'Control de versiones', pricing: { basic: 0, standard: 4, premium: 21, perUser: true }, alternatives: [
-                    { name: 'GitLab', link: 'https://hub.docker.com/r/gitlab/gitlab-ce' }
-                    // Gitea no estaba en el json visto
-                ] },
-                { id: 'bitbucket', name: 'Bitbucket', category: 'Control de versiones', pricing: { basic: 0, standard: 3, premium: 6, perUser: true }, alternatives: [
-                    { name: 'GitLab', link: 'https://hub.docker.com/r/gitlab/gitlab-ce' }
-                ] },
-                { id: 'jira', name: 'Jira', category: 'Gestión de proyectos', pricing: { basic: 0, standard: 7.74, premium: 15.30, perUser: true }, alternatives: [
-                    { name: 'Taiga', link: 'https://hub.docker.com/r/taigaio/taiga-front' }
-                     // Leantime, OpenProject no estaban en el json visto
-                ] },
-                { id: 'substack', name: 'Substack', category: 'Blogging', pricing: { basic: 0, standard: 0, premium: 0, perUser: false }, alternatives: [
-                    { name: 'Ghost', link: 'https://hub.docker.com/r/ghost' }
-                ] },
-                { id: 'medium', name: 'Medium', category: 'Plataforma de publicación', pricing: { basic: 0, standard: 5, premium: 5, perUser: false }, alternatives: [
-                     { name: 'Ghost', link: 'https://hub.docker.com/_/ghost' }
-                    // WordPress no estaba en el json visto
-                ] },
-                { id: 'googleanalytics', name: 'Google Analytics', category: 'Análisis web', pricing: { basic: 0, standard: 0, premium: 8333, perUser: false }, alternatives: [
-                    { name: 'Plausible Analytics', link: 'https://hub.docker.com/r/plausible/analytics' }
-                     // Matomo no estaba en el json visto
-                ] }, 
-                { id: 'confluence', name: 'Confluence', category: 'Documentación/Wiki', pricing: { basic: 0, standard: 5, premium: 10, perUser: true }, alternatives: [
-                    { name: 'BookStack', link: 'https://hub.docker.com/r/linuxserver/bookstack' },
-                    { name: 'Diagrams.net', link: 'https://hub.docker.com/r/jgraph/drawio' }
-                ] },
-                { id: 'googledrive', name: 'Google Drive', category: 'Compartir archivos', pricing: { basic: 0, standard: 9.99, premium: 16.99, perUser: true }, alternatives: [
-                    { name: 'Nextcloud', link: 'https://hub.docker.com/_/nextcloud' }, // Mantener si no hay match directo
-                    { name: 'Seafile', link: 'https://hub.docker.com/r/seafileltd/seafile' } // Mantener si no hay match directo
-                ] },
-                { id: 'dropbox', name: 'Dropbox Business', category: 'Compartir archivos', pricing: { basic: 0, standard: 12, premium: 18, perUser: true }, alternatives: [
-                    { name: 'Nextcloud', link: 'https://hub.docker.com/_/nextcloud' }, // Mantener si no hay match directo
-                    { name: 'Seafile', link: 'https://hub.docker.com/r/seafileltd/seafile' } // Mantener si no hay match directo
-                ] },
-                { id: 'airtable', name: 'Airtable', category: 'Base de datos/Hoja de cálculo', pricing: { basic: 0, standard: 18, premium: 40.50, perUser: true }, alternatives: [
-                    { name: 'NocoDB', link: 'https://hub.docker.com/r/nocodb/nocodb' }, // Mantener si no hay match directo
-                    { name: 'Baserow', link: 'https://hub.docker.com/r/baserow/baserow' } // Mantener si no hay match directo
-                ] },
-                { id: 'typeform', name: 'Typeform', category: 'Formularios y Encuestas', pricing: { basic: 21, standard: 46, premium: 75, perUser: false }, alternatives: [
-                    { name: 'SurveyJS', link: 'https://hub.docker.com/r/surveyjs/surveyjs' }, // Mantener si no hay match directo
-                    { name: 'OhMyForm', link: 'https://hub.docker.com/r/ohmyform/ohmyform' } // Mantener si no hay match directo
-                ] },
-                { id: 'calendly', name: 'Calendly', category: 'Programación de Reuniones', pricing: { basic: 0, standard: 9.00, premium: 14.40, perUser: true }, alternatives: [
-                    { name: 'Cal.com', link: 'https://hub.docker.com/r/calcom/cal.com' } // Mantener si no hay match directo
-                ] },
-                 { id: 'canva', name: 'Canva Pro', category: 'Diseño Gráfico', pricing: { basic: 0, standard: 11.99, premium: 11.99, perUser: true }, alternatives: [
-                    { name: 'Diagrams.net', link: 'https://hub.docker.com/r/jgraph/drawio' }
-                    // Penpot no estaba en el json visto
-                ] }
-            ];
+            // === toolData cargado dinámicamente desde alternativas.json ===
+            let toolData = [];
+            fetch('alternativas.json')
+                .then(res => res.json())
+                .then(data => {
+                    toolData = data.map(item => ({
+                        ...item,
+                        alternatives: item.alternatives.map(alt => ({
+                            name: (typeof alt === 'string') ? alt.charAt(0).toUpperCase() + alt.slice(1) : alt,
+                            action: () => buscarYEnfocarAppDocker(typeof alt === 'string' ? alt : alt.name)
+                        }))
+                    }));
+                    populateToolList(); // Ahora la UI se refresca cuando toolData ya está listo
+                });
             
             const toolSelector = document.getElementById('tool-selector');
             const toolSearch = document.getElementById('tool-search');
@@ -850,6 +769,22 @@
                 toolSearch.addEventListener('input', (e) => {
                     populateToolList(e.target.value);
                 });
+            }
+
+            // --- FUNCIÓN PARA BUSCAR Y ENFOCAR APP DOCKER DESDE LA CALCULADORA ---
+            function buscarYEnfocarAppDocker(nombreApp) {
+                const searchInput = document.getElementById('searchApps');
+                if (searchInput) {
+                    searchInput.value = nombreApp;
+                    // Lanzar el evento input para filtrar
+                    const event = new Event('input', { bubbles: true });
+                    searchInput.dispatchEvent(event);
+                    // Scroll hasta la sección de apps
+                    const appsSection = document.querySelector('.docker-apps-section');
+                    if (appsSection) {
+                        appsSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
             }
 
             // --- Funciones que se añadirán en los siguientes pasos ---
@@ -994,7 +929,7 @@
                                 <div class="recommendation-details">
                                     <strong>${alt.name}</strong>
                                     <span>Alternativa a ${tool.name}</span>
-                                    <a href="${alt.link}" target="_blank" rel="noopener noreferrer">Ver en Docker Hub/Docs <i class="fas fa-external-link-alt fa-xs"></i></a>
+                                    <button class="alt-app-btn" onclick="${alt.action}">Ver en Docker Hub/Docs <i class="fas fa-external-link-alt fa-xs"></i></button>
                                 </div>
                             `;
                             recommendationsList.appendChild(li);
@@ -1010,8 +945,8 @@
                 updateRecommendations();
             }
 
-            // Inicializar la lista de herramientas
-            populateToolList();
+            // Eliminar la llamada inicial fuera del fetch
+            // populateToolList();
         });
     </script>
 </body>
