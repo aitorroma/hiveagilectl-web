@@ -949,5 +949,30 @@
             // populateToolList();
         });
     </script>
+
+    <script>
+        // Copiar comando al hacer click en el bloque de código SOLO en móvil
+        function isMobile() {
+            return window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
+        }
+
+        function addMobileCopyToCode() {
+            if (!isMobile()) return;
+            document.querySelectorAll('.terminal-content code').forEach(function(codeBlock) {
+                codeBlock.addEventListener('click', function() {
+                    const text = codeBlock.innerText;
+                    navigator.clipboard.writeText(text).then(function() {
+                        codeBlock.classList.add('copied');
+                        setTimeout(function(){
+                            codeBlock.classList.remove('copied');
+                        }, 1200);
+                    });
+                });
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', addMobileCopyToCode);
+        window.addEventListener('resize', addMobileCopyToCode);
+    </script>
 </body>
 </html>

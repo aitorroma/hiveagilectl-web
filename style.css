@@ -80,6 +80,19 @@
   line-height: 1.2;
 }
 
+@media (max-width: 600px) {
+  .savings-title h2 {
+    font-size: 1.15rem;
+    line-height: 1.2;
+    white-space: normal !important;
+    word-break: break-word;
+    text-align: center;
+    padding: 0 0.5rem;
+    width: 100%;
+    display: block;
+  }
+}
+
 .savings-desc {
   color: #bcc9c3;
   font-size: 1.1rem;
@@ -328,12 +341,12 @@ h1 {
     margin: 2rem auto;
     max-width: 800px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .terminal-header {
-    background: rgba(42,42,42,0.8);
+    background: rgba(42, 42, 42, 0.8);
     padding: 0.8rem;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -360,7 +373,7 @@ h1 {
 
 .copy-button {
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--text-color);
     padding: 0.5rem 1rem;
     border-radius: 6px;
@@ -373,7 +386,7 @@ h1 {
 }
 
 .copy-button:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-color: var(--accent-color);
 }
 
@@ -387,7 +400,7 @@ h1 {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -420,18 +433,18 @@ h1 {
 }
 
 .feature-item {
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
     padding: 2rem;
     border-radius: 12px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .feature-item:hover {
     transform: translateY(-5px);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .feature-item:hover .feature-glow {
@@ -473,7 +486,7 @@ h1 {
 .apps-section {
     margin: 4rem 0;
     padding: 2rem;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -521,17 +534,17 @@ h1 {
     justify-content: center;
     flex-wrap: wrap;
     padding: 1rem;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .apps-filter input,
 .apps-filter select {
     padding: 0.8rem 1.2rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     color: var(--text-color);
     font-size: 1rem;
     min-width: 250px;
@@ -542,7 +555,7 @@ h1 {
 .apps-filter select:focus {
     outline: none;
     border-color: var(--accent-color);
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.1);
 }
 
@@ -554,8 +567,8 @@ h1 {
 }
 
 .app-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 1.5rem;
     transition: all 0.3s ease;
@@ -569,9 +582,9 @@ h1 {
 
 .app-card:hover {
     transform: translateY(-5px);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     border-color: var(--accent-color);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .app-card:hover::before {
@@ -628,10 +641,10 @@ h1 {
 
 .app-category {
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1rem;
     padding: 0.3rem 0.8rem;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     display: inline-block;
     position: relative;
@@ -752,7 +765,7 @@ h1 {
 
 .terminal-content code {
     font-family: 'Consolas', 'Monaco', monospace;
-    color: #d4d4d4; /* Color de texto claro */
+    color: var(--accent-color); /* Color del comando */
     font-size: 1rem;
     line-height: 1.5;
     white-space: pre-wrap; /* Permitir saltos de línea suaves */
@@ -1283,6 +1296,161 @@ footer h2 {
     }
 }
 
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  body {
+    padding: 0 0.5rem;
+  }
+  .container {
+    padding: 0 0.5rem;
+    width: 100%;
+    min-width: 0;
+  }
+  .savings-banner, .terminal-window, .apps-section, .features-grid, .key-benefits, .manifesto-grid {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 1rem !important;
+    box-sizing: border-box;
+  }
+  .savings-inner {
+    flex-direction: column;
+    padding: 1rem !important;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  .savings-content .top-row, .savings-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .savings-title h2 {
+    font-size: 1.2rem;
+    white-space: normal;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+  .apps-section {
+    padding: 1rem 0.5rem;
+  }
+  .apps-counter {
+    font-size: 1.3rem;
+  }
+  .apps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+  .manifesto-grid, .key-benefits {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+  .benefit-card {
+    padding: 1rem !important;
+  }
+  .terminal-window {
+    padding: 1rem !important;
+    font-size: 0.95rem;
+  }
+  .terminal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .copy-button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .install-context p {
+    font-size: 0.95rem;
+  }
+  .btn, .btn-premium, .btn-install {
+    font-size: 1rem;
+    padding: 0.7rem 0.5rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .how-it-works .steps {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .step {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .docker-apps-section {
+    padding: 1rem 0.5rem;
+  }
+  .apps-counter {
+    font-size: 1.3rem;
+  }
+  .apps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 13px;
+  }
+  .savings-title h2 {
+    font-size: 1rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  section, .benefit-card, .feature-main, .apps-section, .docker-apps-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  h2, h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  p, li, .subtitle {
+    font-size: 1.05rem;
+  }
+  .btn, .btn-premium, .btn-install {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  .apps-section, .docker-apps-section {
+    padding: 1.2rem 0.5rem;
+  }
+  .apps-grid, .features-grid, .manifesto-grid, .key-benefits {
+    gap: 1.2rem;
+  }
+  .terminal-window {
+    margin-bottom: 1.5rem;
+  }
+  footer {
+    padding-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+  /* Separadores visuales opcionales */
+  section:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  /* Centrado de benefit-card solo en móvil */
+  .benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
 /* === Quick Benefits Section === */
 .quick-benefits {
   background: #14221b;
@@ -1559,4 +1727,177 @@ footer h2 {
 .btn-video:hover {
   background: #17ff80;
   color: #071a11;
+}
+
+@media (max-width: 600px) {
+  /* Centrado de texto y emoji del botón demo en móvil */
+  .btn-video {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 0.5rem;
+  }
+}
+
+/* --- ARREGLO Z-INDEX PARA BOTÓN DE COPIAR EN DOCKER APPS --- */
+.docker-apps-section .install-command-container {
+    position: relative;
+    z-index: 10;
+}
+.docker-apps-section .copy-command-button {
+    position: relative;
+    z-index: 20;
+    cursor: pointer;
+}
+.docker-apps-section .install-command-container code {
+    position: relative;
+    z-index: 5;
+}
+
+@media (max-width: 600px) {
+  /* Centrado de títulos y textos en la sección premium */
+  .premium-benefit-title, .premium-benefit-desc {
+    text-align: center !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .premium-benefit-title {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .premium-benefit-desc {
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Centrar los box (tarjetas premium) en el medio */
+  .premium-benefit {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Ajuste botón copiar terminal en móvil */
+  .terminal-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+  }
+  .copy-button {
+    align-self: flex-end;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    margin-right: 0.2rem;
+    width: auto;
+    min-width: 44px;
+    min-height: 36px;
+    padding: 0.4rem 0.7rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    box-shadow: none;
+  }
+  .terminal-buttons {
+    margin-bottom: 0.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Botón copiar debajo y centrado en móvil */
+  .terminal-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.3rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+  }
+  .terminal-buttons {
+    margin-bottom: 0.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .copy-button {
+    align-self: center !important;
+    margin: 0.5rem auto 0.2rem auto;
+    width: 44px;
+    height: 36px;
+    padding: 0.4rem 0.7rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .copy-button {
+    display: none !important;
+  }
+  .terminal-content code {
+    cursor: pointer;
+    user-select: all;
+    background: rgba(0,255,100,0.04);
+    transition: background 0.2s;
+  }
+  .terminal-content code.copied {
+    background: #1c5b3e;
+  }
+  .terminal-content code.copied {
+    position: relative;
+  }
+  .terminal-content code.copied::after {
+    content: "¡Copiado!";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #1c5b3e;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.25em 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.97;
+    animation: fadeOutCopied 1s 0.6s forwards;
+  }
+  @keyframes fadeOutCopied {
+    to { opacity: 0; }
+  }
+}
+
+@media (max-width: 600px) {
+  /* Centrar los box de testimonios en móvil */
+  .testimonial {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+  }
 }
