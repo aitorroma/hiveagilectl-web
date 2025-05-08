@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="benefits.css">
     <link rel="stylesheet" href="savings-banner.css">
     <link rel="stylesheet" href="banner-fix.css">
+    <link rel="stylesheet" href="subscription-widget.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>HiveAgileCTL - Optimiza tu empresa</title>
 </head>
@@ -357,7 +358,29 @@
                 <div class="premium-pricing">
                     <span class="price-tag">Desde solo <strong>29€/mes</strong></span>
                 </div>
+                <!-- Widget de Suscripción HiveAgileCTL -->
+                <div id="hiveagilectl-subscription-widget"></div>
             </div>
+            
+            <!-- Cargar Stripe.js -->
+            <script src="https://js.stripe.com/v3/"></script>
+            
+            <!-- Cargar el script del widget -->
+            <script src="https://licence.hiveagilectl.sh/static/js/widget.js"></script>
+            
+            <!-- Inicializar el widget -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Inicializar el widget con las claves de Stripe y la URL de la API
+                    initHiveAgileCTLWidget({
+                        stripeKey: 'pk_live_3Btnx4pt39jxedexhR64HIxP00Uav0gPKy',
+                        monthlyPriceId: 'price_1RMb1wH5wmTChvO7cTbZDRzk',
+                        yearlyPriceId: 'price_1RMb24H5wmTChvO7Y9QbATfR',
+                        apiUrl: 'https://licence.hiveagilectl.sh',
+                        useCorsProxy: true
+                    });
+                });
+            </script>
         </section>
 
         <!-- 6. Instalación (CTA Final) -->
