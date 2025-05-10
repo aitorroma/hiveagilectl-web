@@ -557,7 +557,7 @@
                             <i class="${icon} app-icon"></i>
                             <span class="app-category">${app.categoria}</span>
                         </div>
-                        <h3 class="app-name">${app.nombre}</h3>
+                        <h3 class="app-name"><span class="notranslate">${app.nombre}</span></h3>
                         <p class="app-description">${app.descripcion || 'Sin descripción disponible.'}</p>
                         <div class="app-card-footer">
                            ${app.enlace_docker ? `<a href="${app.enlace_docker}" target="_blank" class="app-link docker-link"><i class="fab fa-docker"></i> Docker Hub</a>` : ''}
