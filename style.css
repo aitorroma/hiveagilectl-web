@@ -302,6 +302,10 @@ header {
 .logo-container {
     position: relative;
     display: inline-block;
+    display: flex;
+    align-items: center; /* Alinea verticalmente el logo y las banderas */
+    flex-wrap: wrap; /* Permite que las banderas pasen abajo si no hay espacio */
+    justify-content: center; /* Centra el contenido en móviles si se envuelven */
 }
 
 .logo-glow {
@@ -324,6 +328,8 @@ h1 {
     -webkit-text-fill-color: transparent;
     position: relative;
     z-index: 1;
+    margin-right: 10px; /* Espacio entre el logo y las banderas */
+    margin-bottom: 0; /* Eliminar margen inferior si estaba por defecto */
 }
 
 .subtitle {
@@ -1907,6 +1913,19 @@ footer h2 {
 @media (max-width: 600px) {
   /* Ajuste para GTranslate en móviles */
   header {
-    padding-top: 45px; /* Ajusta este valor según sea necesario */
+    padding-top: 0; /* Eliminado el padding-top */
   }
 }
+
+.gtranslate_wrapper {
+  display: inline-block; /* Asegura que se comporte como bloque en línea */
+}
+
+/* Ajustes específicos para móviles si es necesario */
+@media (max-width: 600px) {
+  .logo-container h1 {
+    margin-bottom: 5px; /* Un pequeño espacio si las banderas se van abajo */
+  }
+}
+
+/* Centrado de texto y emoji del botón demo en móvil */
