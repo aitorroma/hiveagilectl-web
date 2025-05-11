@@ -302,10 +302,6 @@ header {
 .logo-container {
     position: relative;
     display: inline-block;
-    display: flex;
-    align-items: center; /* Alinea verticalmente el logo y las banderas */
-    flex-wrap: wrap; /* Permite que las banderas pasen abajo si no hay espacio */
-    justify-content: center; /* Centra el contenido en móviles si se envuelven */
 }
 
 .logo-glow {
@@ -328,8 +324,6 @@ h1 {
     -webkit-text-fill-color: transparent;
     position: relative;
     z-index: 1;
-    margin-right: 10px; /* Espacio entre el logo y las banderas */
-    margin-bottom: 0; /* Eliminar margen inferior si estaba por defecto */
 }
 
 .subtitle {
@@ -339,6 +333,13 @@ h1 {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+}
+
+.gtranslate_wrapper {
+  display: block; /* Para permitir centrado con márgenes automáticos */
+  text-align: center; /* Centra las banderas si son inline-block dentro del wrapper */
+  margin-top: 10px; /* Espacio superior */
+  margin-bottom: 15px; /* Espacio inferior antes del subtítulo */
 }
 
 .terminal-window {
@@ -1918,7 +1919,10 @@ footer h2 {
 }
 
 .gtranslate_wrapper {
-  display: inline-block; /* Asegura que se comporte como bloque en línea */
+  display: block; /* Para permitir centrado con márgenes automáticos */
+  text-align: center; /* Centra las banderas si son inline-block dentro del wrapper */
+  margin-top: 10px; /* Espacio superior */
+  margin-bottom: 15px; /* Espacio inferior antes del subtítulo */
 }
 
 /* Ajustes específicos para móviles si es necesario */
