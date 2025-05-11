@@ -1177,6 +1177,8 @@ footer h2 {
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.8rem;
 }
 
 .community-link:hover::after {
@@ -1904,7 +1906,7 @@ footer h2 {
 
 @media (max-width: 600px) {
   /* Ajuste para GTranslate en móviles */
-  .gt_switcher {
-    top: 15px !important; /* Puedes ajustar este valor si necesitas más o menos espacio */
+  header {
+    padding-top: 45px; /* Ajusta este valor según sea necesario */
   }
 }
