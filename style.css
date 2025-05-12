@@ -1750,6 +1750,141 @@ footer h2 {
   }
 }
 
+/* --- ESTILOS PARA LA SECCIÓN INTRODUCTORIA DE APPS --- */
+.apps-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 2.5rem auto 3.5rem;
+    padding: 1.5rem 2rem;
+    background: rgba(10, 15, 20, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(23, 255, 128, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.apps-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(23, 255, 128, 0) 0%, rgba(23, 255, 128, 0.5) 50%, rgba(23, 255, 128, 0) 100%);
+}
+
+.apps-intro h3 {
+    font-size: 2.4rem;
+    color: #17ff80;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 15px rgba(23, 255, 128, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.apps-intro h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(23, 255, 128, 0.1), rgba(23, 255, 128, 0.5), rgba(23, 255, 128, 0.1));
+    border-radius: 3px;
+}
+
+.apps-intro p {
+    color: #d5d5d5;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .apps-intro {
+        padding: 1.2rem 1rem;
+        margin: 2rem auto 2.5rem;
+    }
+    
+    .apps-intro h3 {
+        font-size: 1.8rem;
+    }
+    
+    .apps-intro p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+}
+
+/* Mejoras para los filtros de búsqueda */
+.apps-filter {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+}
+
+.apps-filter input[type="text"] {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(23, 255, 128, 0.2);
+    background: rgba(10, 15, 20, 0.7);
+    color: #ffffff;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.apps-filter input[type="text"]:focus {
+    outline: none;
+    border-color: rgba(23, 255, 128, 0.5);
+    box-shadow: 0 4px 15px rgba(23, 255, 128, 0.15);
+}
+
+.apps-filter select {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(23, 255, 128, 0.2);
+    background: rgba(10, 15, 20, 0.7);
+    color: #ffffff;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%2317ff80" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.apps-filter select:focus {
+    outline: none;
+    border-color: rgba(23, 255, 128, 0.5);
+    box-shadow: 0 4px 15px rgba(23, 255, 128, 0.15);
+}
+
+@media (max-width: 768px) {
+    .apps-filter {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .apps-filter select {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
 /* --- ARREGLO Z-INDEX PARA BOTÓN DE COPIAR EN DOCKER APPS --- */
 .docker-apps-section .install-command-container {
     position: relative;

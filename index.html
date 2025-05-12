@@ -26,6 +26,10 @@
     <link rel="stylesheet" href="savings-banner.css">
     <link rel="stylesheet" href="banner-fix.css">
     <link rel="stylesheet" href="subscription-widget.css">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="use-cases.css">
+    <link rel="stylesheet" href="comparison.css">
+    <link rel="stylesheet" href="reviews.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>HiveAgileCTL - Optimiza tu empresa</title>
 </head>
@@ -142,23 +146,311 @@
           </div>
         </section>
 
-        <!-- Testimonios -->
-        <section class="testimonials">
-          <h3>Empresas que ya ahorran con nosotros</h3>
-          <div class="testimonial-list">
-            <div class="testimonial">
-              <p>“En solo dos meses hemos reducido nuestros costes un 22% y ahora nuestro equipo es mucho más eficiente.”</p>
-              <span>— Laura G., CEO Pyme logística</span>
+        <!-- Sección FAQ -->
+        <section id="faq-hiveagile" class="faq-section">
+            <h3>Preguntas Frecuentes</h3>
+            <div class="faq-item">
+                <h2>🐝 ¿Qué es HiveAgileCTL?</h2>
+                <p>HiveAgileCTL es una plataforma que te permite instalar y gestionar aplicaciones útiles para tu negocio o proyectos personales, sin necesidad de ser un experto en informática. Gracias a su herramienta HiveAgileCTL, puedes automatizar la instalación de aplicaciones como gestores de correo, almacenamiento en la nube, herramientas de oficina y mucho más, todo en tu propio servidor.</p>
             </div>
-            <div class="testimonial">
-              <p>“Como consultor, ahora puedo ofrecer a mis clientes resultados rápidos y tangibles. ¡Una herramienta imprescindible!”</p>
-              <span>— Javier M., Consultor de procesos</span>
+            <div class="faq-item">
+                <h2>📦 ¿Qué es un Docker y por qué es útil?</h2>
+                <p>Imagina que cada aplicación es como un electrodoméstico que compras: viene listo para usar, sin necesidad de ensamblar piezas ni configurar nada complicado. Docker funciona de manera similar, empaquetando aplicaciones con todo lo necesario para que funcionen correctamente, sin interferir con otras aplicaciones en tu sistema.</p>
+                <p>Esto significa que puedes tener múltiples aplicaciones funcionando en tu servidor de forma segura y eficiente, sin preocuparte por conflictos o configuraciones complejas.</p>
             </div>
-            <div class="testimonial">
-              <p>“No imaginaba que fuera tan fácil optimizar mi negocio. El acompañamiento ha sido clave.”</p>
-              <span>— Marta R., Comercio local</span>
+            <div class="faq-item">
+                <h2>🚀 ¿Cómo te ayuda HiveAgile?</h2>
+                <ul>
+                    <li><strong>Instalación sencilla:</strong> Con unos pocos clics, puedes tener aplicaciones listas para usar en tu servidor.</li>
+                    <li><strong>Ahorro económico:</strong> Al utilizar aplicaciones de código abierto, puedes reducir o eliminar costes de suscripciones a servicios similares.</li>
+                    <li><strong>Seguridad y control:</strong> Al alojar las aplicaciones en tu propio servidor, tienes el control total sobre tus datos.</li>
+                    <li><strong>Flexibilidad:</strong> Puedes personalizar y adaptar las aplicaciones según tus necesidades específicas.</li>
+                </ul>
             </div>
-          </div>
+            <div class="faq-item">
+                <h2>🎓 ¿Necesito conocimientos técnicos?</h2>
+                <p>No. HiveAgile está diseñado para que cualquier persona, independientemente de su experiencia técnica, pueda beneficiarse de sus herramientas. Además, ofrecen tutoriales y soporte para guiarte en cada paso del proceso.</p>
+            </div>
+            <div class="faq-item">
+                <h2>🛠️ ¿Qué aplicaciones puedo instalar?</h2>
+                <p>Con HiveAgile, puedes instalar una amplia variedad de aplicaciones, tales como:</p>
+                <ul>
+                    <li>Sistemas de almacenamiento en la nube (como una alternativa a Dropbox).</li>
+                    <li>Herramientas de oficina colaborativas.</li>
+                    <li>Gestores de correo electrónico.</li>
+                    <li>Plataformas para crear y gestionar newsletters.</li>
+                    <li>Aplicaciones para compartir pantalla o realizar videollamadas.</li>
+                    <li>Y muchas más, todas ellas de código abierto y sin costes de licencia.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección de Casos de Uso -->        
+        <section class="use-cases-section">
+            <h3>Casos de Uso: HiveAgileCTL en Acción</h3>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4 class="use-case-title">Para Pequeñas Empresas</h4>
+                    <p class="use-case-description">Ideal para empresas que quieren reducir costes de software y tener control total sobre sus datos sin necesidad de un equipo técnico grande.</p>
+                    <ul class="use-case-benefits">
+                        <li>Reduce gastos en suscripciones de software hasta un 70%</li>
+                        <li>Almacenamiento de archivos y colaboración sin costes adicionales</li>
+                        <li>Gestión de correo electrónico profesional y seguro</li>
+                        <li>Herramientas de productividad y gestión de proyectos</li>
+                    </ul>
+                    <div class="use-case-cta">
+                        <a href="#savings-calculator">Calcula tu ahorro</a>
+                    </div>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4 class="use-case-title">Para Desarrolladores</h4>
+                    <p class="use-case-description">Simplifica la configuración y gestión de entornos de desarrollo y producción con un control preciso sobre cada aplicación.</p>
+                    <ul class="use-case-benefits">
+                        <li>Entornos de desarrollo consistentes y reproducibles</li>
+                        <li>Gestión simplificada de dependencias y versiones</li>
+                        <li>Despliegue rápido de bases de datos, CMS y herramientas de CI/CD</li>
+                        <li>Monitorización y logs centralizados</li>
+                    </ul>
+                    <div class="use-case-cta">
+                        <a href="#install">Instalar ahora</a>
+                    </div>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h4 class="use-case-title">Para Entusiastas de la Privacidad</h4>
+                    <p class="use-case-description">Recupera el control de tus datos personales alojando tus propios servicios en lugar de depender de grandes corporaciones.</p>
+                    <ul class="use-case-benefits">
+                        <li>Alternativas privadas a Google Drive, Gmail y Calendar</li>
+                        <li>Control total sobre dónde y cómo se almacenan tus datos</li>
+                        <li>Sin análisis de datos ni publicidad basada en tu información</li>
+                        <li>Protección contra el cierre de servicios o cambios en términos</li>
+                    </ul>
+                    <div class="use-case-cta">
+                        <a href="#premium">Ver opciones premium</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Comparativa -->
+        <section class="comparison-section">
+            <h3>HiveAgileCTL vs. Soluciones Tradicionales</h3>
+            <p class="comparison-intro">Descubre por qué cada vez más empresas y profesionales están cambiando a soluciones autoalojadas con HiveAgileCTL en lugar de depender de servicios en la nube tradicionales.</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>HiveAgileCTL</th>
+                        <th>Soluciones SaaS Tradicionales</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight">
+                        <td class="feature-name">Coste mensual</td>
+                        <td>Pago único por licencia + servidor (desde 49€/mes)</td>
+                        <td>Suscripciones recurrentes por usuario (150-500€/mes)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Propiedad de los datos</td>
+                        <td><i class="fas fa-check check"></i> Control total</td>
+                        <td><i class="fas fa-times cross"></i> Almacenados en servidores de terceros</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td class="feature-name">Privacidad</td>
+                        <td><i class="fas fa-check check"></i> Máxima (datos en tu servidor)</td>
+                        <td><i class="fas fa-times cross"></i> Limitada (políticas de privacidad de terceros)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Personalización</td>
+                        <td><i class="fas fa-check check"></i> Total flexibilidad</td>
+                        <td><i class="fas fa-times cross"></i> Limitada a opciones predefinidas</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td class="feature-name">Límite de usuarios</td>
+                        <td><i class="fas fa-check check"></i> Sin límites adicionales</td>
+                        <td><i class="fas fa-times cross"></i> Costes por usuario</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Dependencia externa</td>
+                        <td><i class="fas fa-check check"></i> Independencia total</td>
+                        <td><i class="fas fa-times cross"></i> Vulnerable a cambios de políticas o cierre</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td class="feature-name">Integración entre herramientas</td>
+                        <td><i class="fas fa-check check"></i> Ecosistema unificado</td>
+                        <td><i class="fas fa-times cross"></i> A menudo fragmentada entre proveedores</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="comparison-cta">
+                <a href="#savings-calculator">
+                    <i class="fas fa-calculator"></i> Calcula tu ahorro ahora
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección de Reseñas -->
+        <section class="reviews-section">
+            <h3>Experiencias de Nuestros Clientes</h3>
+            <p class="reviews-intro">Descubre lo que dicen quienes ya están aprovechando todas las ventajas de HiveAgileCTL en sus negocios y proyectos.</p>
+            
+            <div class="reviews-container">
+                <!-- Reseña 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-image">
+                                <img src="/images/reviews/fatima-perez.png" alt="Fatima Perez">
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Fatima Perez</div>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>Había oído hablar del concepto de NoCode, pero no pasé a la acción hasta que descubrí HiveAgile. En tiempos de tanta información, HiveAgile y su comunidad te dan las directrices justas y necesarias para avanzar en tu proyecto. Ya he contratado un servidor, instalado el sistema operativo, un panel para montar webs...Y todo en mi propio servidor ¡y con muchos más recursos y menos inversión!. Agradecida a HiveAgile y Aitor Roma por su inestimable ayuda +++100% recomendable</p>
+                    </div>
+                </div>
+                
+                <!-- Reseña 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-image">
+                                <img src="/images/reviews/carlos-rey.jpeg" alt="Carlos Rey">
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Carlos Rey</div>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>Pues lo cierto es que está genial, además he aprendido a configurar un vps para un montón de apps que antes pagaba. Ahora en vez de pagar 50€ al mes pago 5€ por un vps y lo tengo todo ahí</p>
+                    </div>
+                </div>
+                
+                <!-- Reseña 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-image">
+                                <img src="/images/reviews/jose-jimenez.jpeg" alt="José Jimenez">
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">José Jimenez</div>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>Me ha resultado muy útil, me permite obtener un docker de múltiples servicios y ahorrarme mucho tiempo en instalaciones y servicios. Además si hay algún servicio que no esta isponible para Docker, lo puedes pedir en un apartado especifico y te proporciona un docker compose para facilitar la instalación.</p>
+                    </div>
+                </div>
+                
+                <!-- Reseña 4 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-image">
+                                <img src="/images/reviews/bernardo.jpeg" alt="Bernardo">
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Bernardo</div>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>Estoy muy satisfecho con tener la afiliación. La documentación es muy buena. Pude instalar Jellyfin y Navidrome en mi VPS siguiendo las instrucciones de los tutoriales. Tuve algunos problemillas, pero contacté a Aitor para comentarlos y me ayudó a solucionarlos. De todas maneras eran solamente algunos detalles. Realmente muy satisfecho. Realmente lo recomiendo</p>
+                    </div>
+                </div>
+                
+                <!-- Reseña 5 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-image">
+                                <img src="/images/reviews/hector-guzman.png" alt="Hector Guzman">
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Hector Guzman</div>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>Había escuchado de lo que se puede hacer con Open Source, pero desde que entré en N1mbox mi cabeza explotó del mundo de cosas que uno puede llegar hacer, también destacar de la disponibilidad y atención que tiene Aitor que es la mente maestra de este proyecto para apoyar y atender, muy profesional.</p>
+                    </div>
+                </div>
+                
+                <!-- Reseña 6 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-image">
+                                <img src="/images/reviews/danielgap.jpeg" alt="Danielgap">
+                            </div>
+                            <div class="reviewer-details">
+                                <div class="reviewer-name">Danielgap</div>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>Llevaba varios dias perdidos, para dar con la forma de instalar invoiceninja en el mismo vps con n8n y bitwarden. Aitor me preparó el docker de invoiceninja en cuestión de horas y el resto ya lo tenía listo en hiveagile. Así que tras descubrirlo quede todo funcionando en cuestión de minutos.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Calculadora de ahorro -->
@@ -310,6 +602,11 @@
                     <div class="counter-text">Aplicaciones Docker<br>listas para instalar</div>
                 </div>
                 <div class="counter-glow"></div>
+            </div>
+            
+            <div class="apps-intro">
+                <h3>¿Qué quieres instalar hoy?</h3>
+                <p>Todas estas aplicaciones están listas para instalar con un solo comando. ¡Comienza a disfrutar de tu libertad digital hoy mismo!</p>
             </div>
 
             <div class="apps-filter">
@@ -1018,6 +1315,9 @@
         window.addEventListener('DOMContentLoaded', addMobileCopyToCode);
         window.addEventListener('resize', addMobileCopyToCode);
     </script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>window.gtranslateSettings = {"default_language":"es","native_language_names":true,"detect_browser_language":true,"languages":["es","en","de","pt","it","fr"],"wrapper_selector":".gtranslate_wrapper","flag_size":24,"flag_style":"3d","alt_flags":{"pt":"brazil"}}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
