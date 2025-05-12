@@ -1686,18 +1686,56 @@ footer h2 {
 }
 
 .premium-pricing {
-  margin-bottom: 0.7rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: rgba(10, 15, 20, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(23, 255, 128, 0.15);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .price-tag {
-  display: inline-block;
-  background: #17ff80;
-  color: #071a11;
-  font-weight: bold;
-  font-size: 1.18rem;
-  border-radius: 6px;
-  padding: 0.35em 1em;
-  box-shadow: 0 2px 8px rgba(23,255,128,0.08);
-  margin-bottom: 0.4rem;
+  display: block;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.price-tag strong {
+  color: #17ff80;
+  font-size: 2rem;
+}
+
+.pricing-details {
+  color: #d5d5d5;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.pricing-note {
+  background: rgba(23, 255, 128, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 3px solid rgba(23, 255, 128, 0.5);
+}
+
+.pricing-note p {
+  color: #b5b5b5;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pricing-note i {
+  color: #17ff80;
+  margin-right: 5px;
 }
 
 .install-context {
