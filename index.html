@@ -53,7 +53,6 @@
                 </a>
             </div>
         </header>
-
         <!-- Sección Comando de Instalación (Estructura de Terminal - Sin Sección Envoltorio) -->
         <div id="install" class="terminal-window">
             <div class="terminal-header">
@@ -81,7 +80,6 @@
                 </a>
             </div>
         </div>
-
         <!-- Banner principal optimizado para ventas -->
         <section class="hero-benefits">
             <div class="savings-banner">
@@ -115,7 +113,6 @@
               </div>
             </div>
         </section>
-
         <!-- Beneficios rápidos -->
         <section class="quick-benefits">
           <h3>¿Por qué elegirnos?</h3>
@@ -126,7 +123,6 @@
             <li><strong>Soporte experto:</strong> Te acompañamos en todo el proceso, desde el diagnóstico hasta la optimización.</li>
           </ul>
         </section>
-
         <!-- Cómo funciona -->
         <section class="how-it-works">
           <h3>¿Cómo funciona?</h3>
@@ -145,7 +141,6 @@
             </div>
           </div>
         </section>
-
         <!-- Sección FAQ -->
         <section id="faq-hiveagile" class="faq-section">
             <h3>Preguntas Frecuentes</h3>
@@ -184,7 +179,6 @@
                 </ul>
             </div>
         </section>
-
         <!-- Sección de Casos de Uso -->        
         <section class="use-cases-section">
             <h3>Casos de Uso: HiveAgileCTL en Acción</h3>
@@ -241,7 +235,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Sección de Comparativa -->
         <section class="comparison-section">
             <h3>HiveAgileCTL vs. Soluciones Tradicionales</h3>
@@ -300,7 +293,6 @@
                 </a>
             </div>
         </section>
-
         <!-- Sección de Reseñas -->
         <section class="reviews-section">
             <h3>Experiencias de Nuestros Clientes</h3>
@@ -452,7 +444,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Calculadora de ahorro -->
         <section id="savings-calculator" class="savings-calculator-section">
             <h2>Calcula tu ahorro y descubre alternativas más baratas</h2>
@@ -474,7 +465,6 @@
                         <!-- Configuraciones de herramientas seleccionadas se añadirán aquí -->
                     </div>
                 </div>
-
                 <div class="calculator-results">
                     <h3>3. Tu ahorro mensual estimado con HiveAgileCTL</h3>
                     <div class="results-summary">
@@ -503,7 +493,6 @@
                 </div>
             </div>
         </section>
-
         <!-- 2. Características Clave (Agrupadas) -->
         <section class="key-features-combined">
             <div class="features-grid">
@@ -522,7 +511,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="feature-timeline">
                     <h2>Automatización que te Ahorra Tiempo</h2>
                     <div class="timeline">
@@ -541,7 +529,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="anti-saas-manifesto">
                 <div class="manifesto-content">
                     <h2>Libérate del SaaS</h2>
@@ -564,7 +551,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="community-highlights">
                 <div class="highlight-card">
                     <i class="fas fa-clock"></i>
@@ -583,7 +569,6 @@
                 </div>
             </div>
         </section>
-
         <!-- 3. Demostración y Aplicaciones -->
         <div class="demo-section" id="automatizacion">
             <h2>Automatización en Acción</h2>
@@ -594,7 +579,6 @@
                 </video>
             </div>
         </div>
-
         <section class="docker-apps-section">
             <div class="apps-counter">
                 <div class="counter-content">
@@ -608,7 +592,6 @@
                 <h3>¿Qué quieres instalar hoy?</h3>
                 <p>Todas estas aplicaciones están listas para instalar con un solo comando. ¡Comienza a disfrutar de tu libertad digital hoy mismo!</p>
             </div>
-
             <div class="apps-filter">
                 <input type="text" id="searchApps" placeholder="Buscar aplicaciones...">
                 <select id="categoryFilter">
@@ -616,16 +599,13 @@
                      <!-- Opciones de categoría se añadirán aquí -->
                 </select>
             </div>
-
             <div id="apps-grid" class="apps-container">
                 <!-- Las aplicaciones se cargarán aquí por JS -->
             </div>
-
             <div id="pagination-controls" class="pagination-container">
                 <!-- Los controles de paginación se añadirán aquí por JS -->
             </div>
         </section>
-
         <!-- 5. Sección Premium Mejorada -->
         <section id="premium" class="premium-section">
             <div class="premium-hero">
@@ -687,7 +667,6 @@
                 });
             </script>
         </section>
-
         <!-- 6. Instalación (CTA Final) -->
         <div id="install" class="terminal-window">
             <div class="terminal-header">
@@ -705,7 +684,6 @@
                 <pre><code id="installCommandFinal">/bin/bash -c "$(curl -fsSL https://get.hiveagilectl.sh/)"</code></pre>
             </div>
         </div>
-
         <footer>
             <h2>Únete a la revolución de la automatización</h2>
             <p>Automatiza lo repetitivo. Controla lo esencial.</p>
@@ -718,13 +696,11 @@
             <a href="https://nimbox360.com" class="website-link">nimbox360.com</a>
         </footer>
     </div>
-
     <script>
         // Copiar comando
         document.addEventListener('DOMContentLoaded', () => {
             const copyButtonFinal = document.getElementById('copyCommandFinal');
             const commandTextFinal = document.getElementById('installCommandFinal');
-
             if (copyButtonFinal && commandTextFinal) {
                 copyButtonFinal.addEventListener('click', function() {
                     const commandText = commandTextFinal.innerText;
@@ -737,7 +713,6 @@
                         button.querySelector('i').className = 'fas fa-check'; // Cambiar icono
                         tooltip.textContent = '¡Copiado!'; // Cambiar tooltip
                         button.classList.add('copied');
-
                         setTimeout(() => {
                             button.innerHTML = originalIconHTML + `<span class="tooltip">${originalTooltipText}</span>`; // Restaurar icono y tooltip original
                             button.classList.remove('copied');
@@ -757,7 +732,6 @@
             }
         });
     </script>
-
     <script>
         // Script para cargar aplicaciones Docker (AHORA ENVUELTO)
         document.addEventListener('DOMContentLoaded', () => {
@@ -771,13 +745,11 @@
             const appsPerPage = 12; // Ajusta según necesites
             let currentPage = 1;
             const categories = new Set();
-
             if (!appsGrid || !searchInput || !categoryFilter || !paginationControls || !appsCounterElement) {
                 console.error("Error: No se encontraron todos los elementos necesarios para la sección de aplicaciones.");
                 // Podrías mostrar un mensaje en la UI aquí si faltan elementos
                 return; // Salir si falta algo esencial
             }
-
             fetch('https://raw.githubusercontent.com/aitorroma/hiveagilectl-bin/refs/heads/main/dockers.json')
                 .then(response => {
                     if (!response.ok) {
@@ -788,10 +760,8 @@
                 .then(apps => {
                     allApps = apps;
                     const totalApps = allApps.length;
-
                     // Actualizar contador con efecto
                     updateCounter(totalApps);
-
                     // Poblar categorías y ordenar alfabéticamente
                     allApps.forEach(app => categories.add(app.categoria));
                     const sortedCategories = Array.from(categories).sort();
@@ -802,10 +772,8 @@
                         option.textContent = category;
                         categoryFilter.appendChild(option);
                     });
-
                     // Filtrado inicial (mostrar todo)
                     filterApps();
-
                 })
                 .catch(error => {
                     console.error('Error fatal al cargar o procesar dockers.json:', error);
@@ -814,7 +782,6 @@
                     searchInput.disabled = true;
                     categoryFilter.disabled = true;
                 });
-
             function updateCounter(targetNumber) {
                 let currentNumber = 0;
                 const increment = Math.max(1, Math.ceil(targetNumber / 50)); // Ajusta la velocidad
@@ -827,14 +794,12 @@
                     appsCounterElement.textContent = currentNumber;
                 }, 20); // Intervalo más corto para animación más suave
             }
-
             function displayApps(page) {
                 appsGrid.innerHTML = ''; // Limpiar grid
                 currentPage = page;
                 const start = (page - 1) * appsPerPage;
                 const end = start + appsPerPage;
                 const paginatedApps = filteredApps.slice(start, end);
-
                 if (paginatedApps.length === 0 && filteredApps.length > 0) {
                     // Si estamos en una página vacía pero hay resultados, ir a la última página con resultados
                      const lastPageWithResults = Math.ceil(filteredApps.length / appsPerPage);
@@ -845,8 +810,6 @@
                      renderPaginationControls(); // Renderizar paginación vacía
                      return;
                  }
-
-
                 paginatedApps.forEach((app, index) => {
                     // console.log(`AppLoader: Rendering card for app: ${app.nombre}`);
                     const card = document.createElement('div');
@@ -891,13 +854,10 @@
                 });
                 renderPaginationControls();
             }
-
             function renderPaginationControls() {
                 paginationControls.innerHTML = '';
                 const pageCount = Math.ceil(filteredApps.length / appsPerPage);
-
                 if (pageCount <= 1) return; // No mostrar controles si hay 1 página o menos
-
                  // Botón Primera página
                  if (currentPage > 1) {
                      const firstButton = document.createElement('button');
@@ -905,7 +865,6 @@
                      firstButton.addEventListener('click', () => displayApps(1));
                      paginationControls.appendChild(firstButton);
                  }
-
                 // Botón Anterior
                 if (currentPage > 1) {
                     const prevButton = document.createElement('button');
@@ -913,24 +872,20 @@
                     prevButton.addEventListener('click', () => displayApps(currentPage - 1));
                     paginationControls.appendChild(prevButton);
                 }
-
                 // Números de página (lógica para mostrar elipses si hay muchas)
                  const maxButtonsToShow = 5; // Máximo de botones numéricos a mostrar
                  let startPage = Math.max(1, currentPage - Math.floor(maxButtonsToShow / 2));
                  let endPage = Math.min(pageCount, startPage + maxButtonsToShow - 1);
-
                  // Ajustar si estamos cerca del final
                  if (endPage - startPage + 1 < maxButtonsToShow) {
                      startPage = Math.max(1, endPage - maxButtonsToShow + 1);
                  }
-
                  if (startPage > 1) {
                      const ellipsisStart = document.createElement('span');
                      ellipsisStart.textContent = '...';
                      ellipsisStart.className = 'pagination-ellipsis';
                      paginationControls.appendChild(ellipsisStart);
                  }
-
                 for (let i = startPage; i <= endPage; i++) {
                     const pageButton = document.createElement('button');
                     pageButton.textContent = i;
@@ -940,15 +895,12 @@
                     pageButton.addEventListener('click', () => displayApps(i));
                     paginationControls.appendChild(pageButton);
                 }
-
                  if (endPage < pageCount) {
                      const ellipsisEnd = document.createElement('span');
                      ellipsisEnd.textContent = '...';
                      ellipsisEnd.className = 'pagination-ellipsis';
                      paginationControls.appendChild(ellipsisEnd);
                  }
-
-
                 // Botón Siguiente
                 if (currentPage < pageCount) {
                     const nextButton = document.createElement('button');
@@ -956,7 +908,6 @@
                     nextButton.addEventListener('click', () => displayApps(currentPage + 1));
                     paginationControls.appendChild(nextButton);
                 }
-
                  // Botón Última página
                  if (currentPage < pageCount) {
                      const lastButton = document.createElement('button');
@@ -965,7 +916,6 @@
                      paginationControls.appendChild(lastButton);
                  }
             }
-
             // Función para obtener el icono de Font Awesome según la categoría (Placeholder)
             // Deberías mover la implementación real de esta función aquí si no está global
             function getCategoryIcon(category) {
@@ -995,7 +945,6 @@
                 };
                 return iconMap[categoryLower] || 'fas fa-box-open'; // Icono por defecto
             }
-
             // Función para copiar comando (Placeholder)
              // Deberías mover la implementación real de esta función aquí si no está global
              function copyInstallCommand(button, containername) {
@@ -1035,26 +984,21 @@
                     }, 2500);
                 });
             }
-
             function filterApps() {
                 const searchTerm = searchInput.value.toLowerCase();
                 const selectedCategory = categoryFilter.value;
-
                 filteredApps = allApps.filter(app => {
                     const nameMatch = app.nombre.toLowerCase().includes(searchTerm);
                     const descriptionMatch = app.descripcion?.toLowerCase().includes(searchTerm) || false;
                     const categoryMatch = selectedCategory === '' || app.categoria === selectedCategory;
                     return (nameMatch || descriptionMatch) && categoryMatch;
                 });
-
                 displayApps(1); // Mostrar la primera página de resultados
             }
-
             // Eventos de filtrado
             searchInput.addEventListener('input', filterApps);
             categoryFilter.addEventListener('change', filterApps);
         });
-
         // Script Calculadora (mantenido)
         document.addEventListener('DOMContentLoaded', () => {
             // === toolData cargado dinámicamente desde alternativas.json ===
@@ -1083,7 +1027,6 @@
             
             const hiveAgileCost = 49; // Coste fijo estimado de HiveAgile + Hosting básico
             let selectedTools = {}; // Almacena la configuración de las herramientas seleccionadas
-
             // --- 1. Poblar lista de herramientas --- 
             function populateToolList(filter = '') {
                 toolSelector.innerHTML = '';
@@ -1091,7 +1034,6 @@
                     tool.name.toLowerCase().includes(filter.toLowerCase()) || 
                     tool.category.toLowerCase().includes(filter.toLowerCase())
                 );
-
                 filteredData.sort((a, b) => a.name.localeCompare(b.name)).forEach(tool => {
                     const div = document.createElement('div');
                     div.className = 'tool-item';
@@ -1104,18 +1046,15 @@
                     `;
                     toolSelector.appendChild(div);
                 });
-
                 // Re-attach event listeners a los nuevos checkboxes
                 attachCheckboxListeners(); 
             }
-
             // Event listener para la búsqueda de herramientas
             if (toolSearch) {
                 toolSearch.addEventListener('input', (e) => {
                     populateToolList(e.target.value);
                 });
             }
-
             // --- FUNCIÓN PARA BUSCAR Y ENFOCAR APP DOCKER DESDE LA CALCULADORA ---
             function buscarYEnfocarAppDocker(nombreApp) {
                 const searchInput = document.getElementById('searchApps');
@@ -1131,7 +1070,6 @@
                     }
                 }
             }
-
             // --- Funciones que se añadirán en los siguientes pasos ---
             function attachCheckboxListeners() { 
                 toolSelector.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
@@ -1143,9 +1081,7 @@
                 const checkbox = event.target;
                 const toolId = checkbox.dataset.toolId;
                 const tool = toolData.find(t => t.id === toolId);
-
                 if (!tool) return; // Salir si la herramienta no se encuentra
-
                 if (checkbox.checked) {
                     addToolConfig(tool); 
                     // Añadir a la lista de seleccionados con valores por defecto
@@ -1175,7 +1111,6 @@
                 // Comprobar si el plan 'standard' por defecto realmente existe
                 const defaultPlan = tool.pricing.standard !== undefined ? 'standard' : 'basic';
                 planOptions = planOptions.replace(`value="${defaultPlan}"`, `value="${defaultPlan}" selected`);
-
                 configDiv.innerHTML = `
                     <label>${tool.name}</label>
                     <select data-tool-id="${tool.id}" class="plan-selector">
@@ -1220,7 +1155,6 @@
                 const element = event.target;
                 const toolId = element.dataset.toolId;
                 if (!selectedTools[toolId]) return; // Salir si la herramienta ya no está seleccionada
-
                 if (element.classList.contains('plan-selector')) {
                     selectedTools[toolId].plan = element.value;
                 }
@@ -1252,14 +1186,12 @@
                 
                 commercialCostEl.textContent = `${commercialCost.toFixed(2)} €`;
                 totalSavingsEl.textContent = `${(savings > 0 ? savings : 0).toFixed(2)} €`; // Mostrar 0 si el ahorro es negativo
-
                 // Añadir clase si hay ahorro para posible feedback visual
                 totalSavingsEl.closest('.savings-highlight').classList.toggle('has-savings', savings > 0);
             }
             function updateRecommendations() { 
                 recommendationsList.innerHTML = '';
                 let hasRecommendations = false;
-
                 for (const toolId in selectedTools) {
                     const tool = toolData.find(t => t.id === toolId);
                     if (tool && tool.alternatives && tool.alternatives.length > 0) {
@@ -1281,7 +1213,6 @@
                         });
                     }
                 }
-
                 // Mostrar/ocultar placeholder
                 recommendationsPlaceholder.style.display = hasRecommendations ? 'none' : 'block';
             }
@@ -1289,18 +1220,15 @@
                 updateResults();
                 updateRecommendations();
             }
-
             // Eliminar la llamada inicial fuera del fetch
             // populateToolList();
         });
     </script>
-
     <script>
         // Copiar comando al hacer click en el bloque de código SOLO en móvil
         function isMobile() {
             return window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
         }
-
         function addMobileCopyToCode() {
             if (!isMobile()) return;
             document.querySelectorAll('.terminal-content code').forEach(function(codeBlock) {
@@ -1315,16 +1243,149 @@
                 });
             });
         }
-
         window.addEventListener('DOMContentLoaded', addMobileCopyToCode);
         window.addEventListener('resize', addMobileCopyToCode);
     </script>
-
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script>window.gtranslateSettings = {"default_language":"es","native_language_names":true,"detect_browser_language":true,"languages":["es","en","de","pt","it","fr"],"wrapper_selector":".gtranslate_wrapper","flag_size":24,"flag_style":"3d","alt_flags":{"pt":"brazil"}}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
     <script defer data-domain="hiveagilectl.sh" src="https://plausible.hiveagile.dev/js/script.js"></script>
+    
+    <!-- Integración de n8n Chat -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <style>
+        /* Estilos personalizados para el chat de n8n usando las variables CSS oficiales */
+        :root {
+            /* Colores principales */
+            --chat--color-primary: #0c3c2f; /* Verde HiveAgileCTL */
+            --chat--color-primary-shade-50: #0f4d3d; /* Verde un poco más claro */
+            --chat--color-primary-shade-100: #125c49; /* Verde aún más claro */
+            --chat--color-secondary: #20b69e; /* Color complementario */
+            --chat--color-secondary-shade-50: #1ca08a;
+            --chat--color-white: #ffffff;
+            --chat--color-light: #f2f4f8;
+            --chat--color-light-shade-50: #e6e9f1;
+            --chat--color-light-shade-100: #c2c5cc;
+            --chat--color-medium: #d2d4d9;
+            --chat--color-dark: #101330;
+            --chat--color-disabled: #777980;
+            --chat--color-typing: #404040;
+            /* Espaciado y bordes */
+            --chat--spacing: 1rem;
+            --chat--border-radius: 0.5rem; /* Bordes más redondeados como en HiveAgileCTL */
+            --chat--transition-duration: 0.2s;
+            /* Dimensiones de la ventana */
+            --chat--window--width: 400px;
+            --chat--window--height: 600px;
+            /* Cabecera */
+            --chat--header-height: auto;
+            --chat--header--padding: var(--chat--spacing);
+            --chat--header--background: var(--chat--color-primary); /* Verde HiveAgileCTL */
+            --chat--header--color: var(--chat--color-white);
+            --chat--header--border-top: none;
+            --chat--header--border-bottom: none;
+            --chat--heading--font-size: 1.5em;
+            --chat--subtitle--font-size: 0.9em;
+            --chat--subtitle--line-height: 1.6;
+            /* Área de texto */
+            --chat--textarea--height: 60px;
+            /* Mensajes */
+            --chat--message--font-size: 1rem;
+            --chat--message--padding: var(--chat--spacing);
+            --chat--message--border-radius: var(--chat--border-radius);
+            --chat--message-line-height: 1.6;
+            --chat--message--bot--background: var(--chat--color-white);
+            --chat--message--bot--color: var(--chat--color-dark);
+            --chat--message--bot--border: 1px solid #e6e9f1;
+            --chat--message--user--background: var(--chat--color-primary); /* Verde HiveAgileCTL */
+            --chat--message--user--color: var(--chat--color-white);
+            --chat--message--user--border: none;
+            --chat--message--pre--background: rgba(0, 0, 0, 0.05);
+            /* Botón de chat */
+            --chat--toggle--background: var(--chat--color-primary); /* Verde HiveAgileCTL */
+            --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
+            --chat--toggle--active--background: var(--chat--color-primary-shade-100);
+            --chat--toggle--color: var(--chat--color-white);
+            --chat--toggle--size: 64px;
+        }
+        /* Estilos adicionales para mejorar la integración con HiveAgileCTL */
+        .n8n-chat-button {
+            box-shadow: 0 4px 12px rgba(12, 60, 47, 0.3) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        
+        .n8n-chat-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 16px rgba(12, 60, 47, 0.4) !important;
+        }
+        
+        .n8n-chat-window {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+            border: 1px solid rgba(12, 60, 47, 0.1) !important;
+        }
+        
+        /* Estilo para los botones dentro del chat */
+        .n8n-chat-window button.primary {
+            background-color: var(--chat--color-primary) !important;
+            border-color: var(--chat--color-primary) !important;
+        }
+        
+        /* Estilo para los enlaces dentro del chat */
+        .n8n-chat-window a {
+            color: var(--chat--color-primary) !important;
+        }
+        
+        /* Ocultar el 'Powered by n8n' */
+        .chat-powered-by,
+        div[class*="powered-by"],
+        div[class*="poweredBy"],
+        .n8n-chat-window div.chat-powered-by,
+        .n8n-chat-window div[class*="powered-by"],
+        .n8n-chat-window div[class*="poweredBy"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
+            position: absolute !important;
+            pointer-events: none !important;
+        }
+    </style>
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+        // Crear el chat en modo ventana normal
+        createChat({
+            webhookUrl: 'https://webhook.nimboxtalk.chat/webhook/55e3c6c8-369d-49f2-86ed-a43fcc16786e/chat',
+            webhookConfig: {
+                method: 'POST',
+                headers: {}
+            },
+            mode: 'window',
+            chatInputKey: 'chatInput',
+            chatSessionKey: 'sessionId',
+            metadata: {
+                source: 'hiveagilectl.sh',
+                purpose: 'digital_sovereignty'
+            },
+            showWelcomeScreen: true,
+            defaultLanguage: 'es',
+            initialMessages: [
+                '¡Hola! 👋',
+                'Soy NadIA, tu asistente especializado en ayudarte a ahorrar dinero y recuperar tu soberanía digital.',
+                '¿Qué software de pago estás usando actualmente que te gustaría reemplazar con alternativas de código abierto?'
+            ],
+            i18n: {
+                es: {
+                    title: 'NadIA - Asistente de Ahorro Digital',
+                    subtitle: "Descubre alternativas de código abierto a tu software de pago y ahorra hasta un 70% en costes.",
+                    footer: '',
+                    getStarted: 'Calcular mi ahorro',
+                    inputPlaceholder: 'Ej: Busco alternativa a Dropbox, Office 365...',
+                }
+            }
+        });
+    </script>
 </body>
 </html>
