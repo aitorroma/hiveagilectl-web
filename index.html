@@ -32,6 +32,195 @@
     <link rel="stylesheet" href="reviews.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>HiveAgileCTL - Optimiza tu empresa</title>
+    <style>
+        /* Estilos para el botón de NadIA */
+        .btn-chat {
+            background-color: #20b69e;
+            color: white;
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 3.5rem;
+        }
+        
+        .btn-chat:hover {
+            background-color: #1ca08a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(32, 182, 158, 0.3);
+        }
+        
+        .btn-chat i {
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-chat, .btn-premium, .btn-install {
+                width: 80%;
+                margin: 5px 0;
+                justify-content: center;
+            }
+        }
+        
+        /* Estilos para la sección de NadIA */
+        .nadia-assistant-section {
+            padding: 4rem 2rem;
+            background-color: #0c3c2f;
+            color: white;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nadia-assistant-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(32, 182, 158, 0.2) 0%, rgba(12, 60, 47, 0) 70%);
+            z-index: 1;
+        }
+        
+        .nadia-assistant-section > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .nadia-assistant-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nadia-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .nadia-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .nadia-intro {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 1.8rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .nadia-benefits {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .nadia-benefits li {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nadia-benefits li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .nadia-benefits li strong {
+            color: #20b69e;
+        }
+        
+        .nadia-benefits i {
+            color: #20b69e;
+            margin-right: 12px;
+            font-size: 1.3rem;
+            background: rgba(255, 255, 255, 0.15);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nadia-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .nadia-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nadia-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .nadia-chat-button {
+            background-color: #20b69e;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(32, 182, 158, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .nadia-chat-button:hover {
+            background-color: #1a9e89;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(32, 182, 158, 0.5);
+        }
+        
+        .nadia-chat-button i {
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .nadia-container {
+                flex-direction: column;
+            }
+            
+            .nadia-image {
+                order: -1;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -50,6 +239,10 @@
                 <a href="#premium" class="btn-install">
                     <i class="fas fa-crown"></i>
                     Acceso Premium
+                </a>
+                <a href="#nadia" class="btn-chat">
+                    <i class="fas fa-robot"></i>
+                    Hablar con NadIA
                 </a>
             </div>
         </header>
@@ -444,6 +637,31 @@
                 </div>
             </div>
         </section>
+
+        <!-- Sección NadIA - Asistente Virtual -->
+        <section id="nadia-cta" class="nadia-assistant-section">
+            <h2>NadIA - Tu Asistente de Ahorro Digital</h2>
+            <div class="nadia-container">
+                <div class="nadia-info">
+                    <p class="nadia-intro">NadIA es tu asistente virtual especializado en ayudarte a encontrar alternativas de código abierto a software propietario de pago. Te ayuda a:</p>
+                    <ul class="nadia-benefits">
+                        <li><i class="fas fa-search"></i> <strong>Encontrar alternativas</strong> a software propietario costoso</li>
+                        <li><i class="fas fa-coins"></i> <strong>Calcular tu ahorro</strong> al migrar a soluciones de código abierto</li>
+                        <li><i class="fas fa-server"></i> <strong>Recuperar el control</strong> de tus datos e infraestructura</li>
+                        <li><i class="fas fa-shield-alt"></i> <strong>Mejorar la seguridad</strong> con soluciones transparentes y auditables</li>
+                    </ul>
+                    <div class="nadia-cta">
+                        <button id="open-nadia-chat-btn" class="nadia-chat-button">
+                            <i class="fas fa-comments"></i> Conversar con NadIA ahora
+                        </button>
+                    </div>
+                </div>
+                <div class="nadia-image">
+                    <img src="https://nimbox360.com/nadia-assistant.png" alt="NadIA - Asistente Virtual" onerror="this.src='https://placehold.co/400x300/0c3c2f/white?text=NadIA'">
+                </div>
+            </div>
+        </section>
+
         <!-- Calculadora de ahorro -->
         <section id="savings-calculator" class="savings-calculator-section">
             <h2>Calcula tu ahorro y descubre alternativas más baratas</h2>
@@ -1253,8 +1471,17 @@
     <script defer data-domain="hiveagilectl.sh" src="https://plausible.hiveagile.dev/js/script.js"></script>
     
     <!-- Integración de n8n Chat -->
+    <div id="nadia"></div>
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <style>
+        /* Estilos para el contenedor del chat a pantalla completa */
+        html,
+        body,
+        #n8n-chat {
+            width: 100%;
+            height: 100%;
+        }
+        
         /* Estilos personalizados para el chat de n8n usando las variables CSS oficiales */
         :root {
             /* Colores principales */
@@ -1355,34 +1582,100 @@
     </style>
     <script type="module">
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-        // Crear el chat en modo ventana normal
-        createChat({
-            webhookUrl: 'https://webhook.nimboxtalk.chat/webhook/55e3c6c8-369d-49f2-86ed-a43fcc16786e/chat',
-            webhookConfig: {
-                method: 'POST',
-                headers: {}
-            },
-            mode: 'window',
-            chatInputKey: 'chatInput',
-            chatSessionKey: 'sessionId',
-            metadata: {
-                source: 'hiveagilectl.sh',
-                purpose: 'digital_sovereignty'
-            },
-            showWelcomeScreen: true,
-            defaultLanguage: 'es',
-            initialMessages: [
-                '¡Hola! 👋',
-                'Soy NadIA, tu asistente especializado en ayudarte a ahorrar dinero y recuperar tu soberanía digital.',
-                '¿Qué software de pago estás usando actualmente que te gustaría reemplazar con alternativas de código abierto?'
-            ],
-            i18n: {
-                es: {
-                    title: 'NadIA - Asistente de Ahorro Digital',
-                    subtitle: "Descubre alternativas de código abierto a tu software de pago y ahorra hasta un 70% en costes.",
-                    footer: '',
-                    getStarted: 'Calcular mi ahorro',
-                    inputPlaceholder: 'Ej: Busco alternativa a Dropbox, Office 365...',
+        
+        // Variable para guardar la instancia del chat
+        let chatInstance;
+        
+        // Función para inicializar el chat
+        function initChat() {
+            // Crear el chat en modo pantalla completa
+            chatInstance = createChat({
+                webhookUrl: 'https://webhook.nimboxtalk.chat/webhook/55e3c6c8-369d-49f2-86ed-a43fcc16786e/chat',
+                webhookConfig: {
+                    method: 'POST',
+                    headers: {}
+                },
+                mode: 'fullscreen',
+                chatInputKey: 'chatInput',
+                chatSessionKey: 'sessionId',
+                metadata: {
+                    source: 'hiveagilectl.sh',
+                    purpose: 'digital_sovereignty'
+                },
+                showWelcomeScreen: true,
+                defaultLanguage: 'es',
+                initialMessages: [
+                    '¡Hola! 👋',
+                    'Soy NadIA, tu asistente especializado en ayudarte a ahorrar dinero y recuperar tu soberanía digital.',
+                    '¿Qué software de pago estás usando actualmente que te gustaría reemplazar con alternativas de código abierto?'
+                ],
+                i18n: {
+                    es: {
+                        title: 'NadIA - Asistente de Ahorro Digital',
+                        subtitle: "Descubre alternativas de código abierto a tu software de pago y ahorra hasta un 70% en costes.",
+                        footer: '',
+                        getStarted: 'Calcular mi ahorro',
+                        inputPlaceholder: 'Ej: Busco alternativa a Dropbox, Office 365...',
+                    }
+                }
+            });
+            
+            return chatInstance;
+        }
+        
+        // Inicializar el chat
+        chatInstance = initChat();
+        
+        // Detectar los marcadores en la URL y desplazarse hasta allí
+        document.addEventListener('DOMContentLoaded', function() {
+            // Comprobar si la URL contiene el marcador #nadia (para el chat)
+            if (window.location.hash === '#nadia') {
+                const nadiaElement = document.getElementById('nadia');
+                if (nadiaElement) {
+                    // Hacer scroll hasta el elemento con ID 'nadia'
+                    setTimeout(function() {
+                        nadiaElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                }
+            }
+            // Comprobar si la URL contiene el marcador #nadia-cta (para la sección informativa)
+            else if (window.location.hash === '#nadia-cta') {
+                const nadiaCTAElement = document.getElementById('nadia-cta');
+                if (nadiaCTAElement) {
+                    // Hacer scroll hasta el elemento con ID 'nadia-cta'
+                    setTimeout(function() {
+                        nadiaCTAElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                }
+            }
+            
+            // Añadir evento de clic al botón en la sección NadIA
+            const openChatBtn = document.getElementById('open-nadia-chat-btn');
+            if (openChatBtn) {
+                openChatBtn.addEventListener('click', function() {
+                    // Solo hacer scroll hasta el chat, sin abrirlo
+                    const nadiaElement = document.getElementById('nadia');
+                    if (nadiaElement) {
+                        nadiaElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+        
+        // También detectar cambios en el hash de la URL (para cuando el usuario hace clic en el enlace estando ya en la página)
+        window.addEventListener('hashchange', function() {
+            if (window.location.hash === '#nadia') {
+                const nadiaElement = document.getElementById('nadia');
+                if (nadiaElement) {
+                    // Hacer scroll hasta el elemento con ID 'nadia'
+                    nadiaElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            else if (window.location.hash === '#nadia-cta') {
+                const nadiaCTAElement = document.getElementById('nadia-cta');
+                if (nadiaCTAElement) {
+                    // Hacer scroll hasta el elemento con ID 'nadia-cta'
+                    nadiaCTAElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
         });
