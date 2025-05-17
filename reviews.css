@@ -144,6 +144,14 @@
     margin: 0;
 }
 
+/* Estilo para imágenes de IA provenientes de cdn.jsdelivr.net */
+img[src^="https://cdn.jsdelivr.net/gh/selfhst/icons/webp/"] {
+  width: 64px !important;
+  height: 64px !important;
+  vertical-align: middle !important;
+  display: inline-block !important;
+}
+
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .reviews-section h3 {
