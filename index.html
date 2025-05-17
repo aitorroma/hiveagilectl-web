@@ -497,7 +497,7 @@
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="/images/reviews/fatima-perez.png" alt="Fatima Perez">
+                                <img src="/images/reviews/fatima-perez.png" alt="Fatima Perez" onerror="this.src='https://placehold.co/100x100/0c3c2f/white?text=FP'">
                             </div>
                             <div class="reviewer-details">
                                 <div class="reviewer-name">Fatima Perez</div>
@@ -521,7 +521,7 @@
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="/images/reviews/carlos-rey.jpeg" alt="Carlos Rey">
+                                <img src="/images/reviews/carlos-rey.jpeg" alt="Carlos Rey" onerror="this.src='https://placehold.co/100x100/0c3c2f/white?text=CR'">
                             </div>
                             <div class="reviewer-details">
                                 <div class="reviewer-name">Carlos Rey</div>
@@ -545,7 +545,7 @@
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="/images/reviews/jose-jimenez.jpeg" alt="José Jimenez">
+                                <img src="/images/reviews/jose-jimenez.jpeg" alt="José Jimenez" onerror="this.src='https://placehold.co/100x100/0c3c2f/white?text=JJ'">
                             </div>
                             <div class="reviewer-details">
                                 <div class="reviewer-name">José Jimenez</div>
@@ -569,7 +569,7 @@
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="/images/reviews/bernardo.jpeg" alt="Bernardo">
+                                <img src="/images/reviews/bernardo.jpeg" alt="Bernardo" onerror="this.src='https://placehold.co/100x100/0c3c2f/white?text=B'">
                             </div>
                             <div class="reviewer-details">
                                 <div class="reviewer-name">Bernardo</div>
@@ -593,7 +593,7 @@
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="/images/reviews/hector-guzman.png" alt="Hector Guzman">
+                                <img src="/images/reviews/hector-guzman.png" alt="Hector Guzman" onerror="this.src='https://placehold.co/100x100/0c3c2f/white?text=HG'">
                             </div>
                             <div class="reviewer-details">
                                 <div class="reviewer-name">Hector Guzman</div>
@@ -617,7 +617,7 @@
                     <div class="review-header">
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="/images/reviews/danielgap.jpeg" alt="Danielgap">
+                                <img src="/images/reviews/danielgap.jpeg" alt="Danielgap" onerror="this.src='https://placehold.co/100x100/0c3c2f/white?text=DG'">
                             </div>
                             <div class="reviewer-details">
                                 <div class="reviewer-name">Danielgap</div>
@@ -1678,6 +1678,42 @@
                 }
             }
         });
+    </script>
+    <style>
+      img[src^="https://cdn.jsdelivr.net/gh/selfhst/icons/webp/"] {
+        width: 64px !important;
+        height: 64px !important;
+        vertical-align: middle !important;
+        display: inline-block !important;
+        object-fit: contain;
+      }
+      
+      img.fallback-icon {
+        opacity: 0.8;
+        filter: grayscale(30%);
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const icons = document.querySelectorAll('img[src^="https://cdn.jsdelivr.net/gh/selfhst/icons/webp/"]');
+        
+        icons.forEach(img => {
+          const originalSrc = img.src;
+          
+          img.onerror = function() {
+            if (this.src !== 'https://t4.ftcdn.net/jpg/01/25/36/71/360_F_125367167_JnrCHTqtZhAbWS3doG4tt631usPHiPnr.jpg') {
+              this.src = 'https://t4.ftcdn.net/jpg/01/25/36/71/360_F_125367167_JnrCHTqtZhAbWS3doG4tt631usPHiPnr.jpg';
+              this.classList.add('fallback-icon');
+              
+              const appName = originalSrc.split('/').pop().replace('.webp', '').replace(/-/g, ' ');
+              this.title = 'Icono no disponible para: ' + 
+                          appName.charAt(0).toUpperCase() + appName.slice(1);
+            }
+            this.onerror = null;
+          };
+        });
+      });
     </script>
 </body>
 </html>
