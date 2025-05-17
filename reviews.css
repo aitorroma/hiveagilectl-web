@@ -145,7 +145,7 @@
 }
 
 /* Estilo para imágenes de IA provenientes de cdn.jsdelivr.net */
-img[src^="https://cdn.jsdelivr.net/gh/selfhst/icons/webp/"] {
+img[src^="https://cdn.jsdelivr.net/gh/selfhst/icons/png/"] {
   width: 64px !important;
   height: 64px !important;
   vertical-align: middle !important;
