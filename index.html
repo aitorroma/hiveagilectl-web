@@ -812,10 +812,19 @@
             </div>
             <div class="apps-filter">
                 <input type="text" id="searchApps" placeholder="Buscar aplicaciones...">
-                <select id="categoryFilter">
-                    <option value="">Todas las categorías</option>
-                     <!-- Opciones de categoría se añadirán aquí -->
-                </select>
+                <div class="custom-select-wrapper">
+                    <div class="custom-select" id="customCategoryFilter">
+                        <div class="custom-select-trigger">Todas las categorías</div>
+                        <div class="custom-options">
+                            <span class="custom-option selected" data-value="">Todas las categorías</span>
+                            <!-- Opciones de categoría se añadirán aquí -->
+                        </div>
+                    </div>
+                    <select id="categoryFilter" style="display: none;">
+                        <option value="">Todas las categorías</option>
+                        <!-- Opciones de categoría se añadirán aquí -->
+                    </select>
+                </div>
             </div>
             <div id="apps-grid" class="apps-container">
                 <!-- Las aplicaciones se cargarán aquí por JS -->
@@ -983,15 +992,34 @@
                     // Poblar categorías y ordenar alfabéticamente
                     allApps.forEach(app => categories.add(app.categoria));
                     const sortedCategories = Array.from(categories).sort();
+                    
+                    // Limpiar opciones existentes excepto la primera
+                    while (categoryFilter.options.length > 1) {
+                        categoryFilter.remove(1);
+                    }
+                    
+                    // Obtener el contenedor de opciones personalizadas
+                    const customOptions = document.querySelector('.custom-options');
+                    
+                    // Añadir nuevas opciones al select oculto y al selector personalizado
                     sortedCategories.forEach(category => {
+                        // Añadir al select oculto
                         const option = document.createElement('option');
                         option.value = category;
-                        // Corregido: Mostrar solo el nombre de la categoría en el texto de la opción
                         option.textContent = category;
-                        option.style.color = '#ffffff';
-                        option.style.backgroundColor = 'rgba(10, 15, 20, 0.9)';
                         categoryFilter.appendChild(option);
+                        
+                        // Añadir al selector personalizado
+                        const customOption = document.createElement('span');
+                        customOption.className = 'custom-option';
+                        customOption.setAttribute('data-value', category);
+                        customOption.textContent = category;
+                        customOptions.appendChild(customOption);
                     });
+                    
+                    // Configurar el selector personalizado
+                    setupCustomSelect();
+                    
                     // Filtrado inicial (mostrar todo)
                     filterApps();
                 })
@@ -1205,7 +1233,7 @@
                 });
             }
             function filterApps() {
-                const searchTerm = searchInput.value.toLowerCase();
+                const searchTerm = searchApps.value.toLowerCase();
                 const selectedCategory = categoryFilter.value;
                 filteredApps = allApps.filter(app => {
                     const nameMatch = app.nombre.toLowerCase().includes(searchTerm);
@@ -1215,8 +1243,50 @@
                 });
                 displayApps(1); // Mostrar la primera página de resultados
             }
+            
+            // Función para configurar el selector personalizado
+            function setupCustomSelect() {
+                const customSelect = document.getElementById('customCategoryFilter');
+                const customSelectTrigger = customSelect.querySelector('.custom-select-trigger');
+                const customOptions = customSelect.querySelector('.custom-options');
+                const customOptionItems = customOptions.querySelectorAll('.custom-option');
+                
+                // Abrir/cerrar el selector al hacer clic en el trigger
+                customSelectTrigger.addEventListener('click', function() {
+                    customSelect.classList.toggle('opened');
+                });
+                
+                // Cerrar el selector al hacer clic fuera de él
+                document.addEventListener('click', function(e) {
+                    if (!customSelect.contains(e.target)) {
+                        customSelect.classList.remove('opened');
+                    }
+                });
+                
+                // Manejar la selección de opciones
+                customOptionItems.forEach(option => {
+                    option.addEventListener('click', function() {
+                        // Actualizar el texto del trigger
+                        customSelectTrigger.textContent = this.textContent;
+                        
+                        // Actualizar la clase selected
+                        customOptionItems.forEach(opt => opt.classList.remove('selected'));
+                        this.classList.add('selected');
+                        
+                        // Actualizar el valor del select oculto
+                        categoryFilter.value = this.getAttribute('data-value');
+                        
+                        // Disparar el evento change en el select oculto
+                        const event = new Event('change');
+                        categoryFilter.dispatchEvent(event);
+                        
+                        // Cerrar el selector
+                        customSelect.classList.remove('opened');
+                    });
+                });
+            }
             // Eventos de filtrado
-            searchInput.addEventListener('input', filterApps);
+            searchApps.addEventListener('input', filterApps);
             categoryFilter.addEventListener('change', filterApps);
         });
         // Script Calculadora (mantenido)
@@ -1328,9 +1398,7 @@
                 if (tool.pricing.standard !== undefined) planOptions += `<option value="standard" selected>Plan Estándar (${tool.pricing.standard}€)</option>`;
                 if (tool.pricing.premium !== undefined) planOptions += `<option value="premium">Plan Premium (${tool.pricing.premium}€)</option>`;
                 
-                // Comprobar si el plan 'standard' por defecto realmente existe
-                const defaultPlan = tool.pricing.standard !== undefined ? 'standard' : 'basic';
-                planOptions = planOptions.replace(`value="${defaultPlan}"`, `value="${defaultPlan}" selected`);
+                // Corregido: Mostrar solo el nombre de la categoría en el texto de la opción
                 configDiv.innerHTML = `
                     <label>${tool.name}</label>
                     <select data-tool-id="${tool.id}" class="plan-selector">
