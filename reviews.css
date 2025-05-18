@@ -56,7 +56,7 @@
 }
 
 .review-card {
-    background: rgba(10, 15, 20, 0.5);
+    background: rgba(10, 15, 20, 0.8);
     border-radius: 12px;
     padding: 1.8rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -120,7 +120,7 @@
 
 .reviewer-name {
     font-weight: bold;
-    color: #ffffff;
+    color: #ffffff !important;
     margin-bottom: 5px;
     font-size: 1.1rem;
 }
@@ -133,7 +133,7 @@
 }
 
 .review-content {
-    color: #c5c5c5;
+    color: #ffffff !important;
     line-height: 1.6;
     flex: 1;
     position: relative;

@@ -988,6 +988,8 @@
                         option.value = category;
                         // Corregido: Mostrar solo el nombre de la categoría en el texto de la opción
                         option.textContent = category;
+                        option.style.color = '#ffffff';
+                        option.style.backgroundColor = 'rgba(10, 15, 20, 0.9)';
                         categoryFilter.appendChild(option);
                     });
                     // Filtrado inicial (mostrar todo)
