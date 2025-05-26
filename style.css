@@ -759,6 +759,7 @@ h1 {
     line-height: 1.6;
     color: var(--text-color);
     position: relative;
+    margin-bottom: 1rem;
     z-index: 1;
     flex-grow: 1;
     margin-bottom: 1rem;
@@ -2206,3 +2207,55 @@ footer h2 {
 }
 
 /* Centrado de texto y emoji del botón demo en móvil */
+
+/* Estilos para los enlaces de aplicaciones Docker */
+.app-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.app-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.app-link:hover {
+    background-color: rgba(var(--accent-color-rgb), 0.2);
+    color: var(--accent-color);
+}
+
+.app-links-icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.app-links-icons .app-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+}
+
+.app-links-icons .app-link:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+}
