@@ -18,9 +18,9 @@ Gestiona tareas y proyectos en una instancia self-hosted de Vikunja mediante RES
 **Install locally:**
 ```bash
 mkdir -p ~/.nimworker/skills
-curl -s https://hiveagile.sh/skill.md > ~/.nimworker/skills/SKILL.md
-curl -s https://hiveagile.sh/register.md > ~/.nimworker/skills/REGISTER.md
-curl -s https://hiveagile.sh/heartbeat.md > ~/.nimworker/skills/HEARTBEAT.md
+curl -s https://hiveagilectl.sh/skill.md > ~/.nimworker/skills/SKILL.md
+curl -s https://hiveagilectl.sh/register.md > ~/.nimworker/skills/REGISTER.md
+curl -s https://hiveagilectl.sh/heartbeat.md > ~/.nimworker/skills/HEARTBEAT.md
 ```
 
 Or copy from local repo:

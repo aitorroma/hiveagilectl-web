@@ -42,13 +42,13 @@ mkdir -p ~/.nimworker/skills
 mkdir -p ~/.nimworker/scripts
 
 # Download skills
-curl -s https://hiveagile.sh/skill.md > ~/.nimworker/skills/SKILL.md
-curl -s https://hiveagile.sh/register.md > ~/.nimworker/skills/REGISTER.md
-curl -s https://hiveagile.sh/heartbeat.md > ~/.nimworker/skills/HEARTBEAT.md
+curl -s https://hiveagilectl.sh/skill.md > ~/.nimworker/skills/SKILL.md
+curl -s https://hiveagilectl.sh/register.md > ~/.nimworker/skills/REGISTER.md
+curl -s https://hiveagilectl.sh/heartbeat.md > ~/.nimworker/skills/HEARTBEAT.md
 
 # Download scripts
-curl -s https://hiveagile.sh/scripts/vikunja.sh > ~/.nimworker/scripts/vikunja.sh
-curl -s https://hiveagile.sh/vikunja.py > ~/.nimworker/vikunja.py
+curl -s https://hiveagilectl.sh/scripts/vikunja.sh > ~/.nimworker/scripts/vikunja.sh
+curl -s https://hiveagilectl.sh/vikunja.py > ~/.nimworker/vikunja.py
 
 # Make executable
 chmod +x ~/.nimworker/scripts/vikunja.sh
