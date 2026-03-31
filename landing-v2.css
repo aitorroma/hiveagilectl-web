@@ -220,3 +220,93 @@ footer {
   .btn { width: 100%; }
   .copy-btn { width: auto; }
 }
+
+video {
+  width: 100%;
+  border-radius: .8rem;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.video-wrap {
+  padding: .7rem;
+}
+
+.catalog-toolbar {
+  display: grid;
+  gap: .7rem;
+  grid-template-columns: 2fr minmax(180px, 1fr);
+}
+
+.catalog-toolbar input,
+.catalog-toolbar select {
+  width: 100%;
+  padding: .7rem .75rem;
+  border-radius: .55rem;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.apps-counter {
+  margin: .9rem 0;
+  color: #86efac;
+  font-weight: 600;
+}
+
+.apps-grid {
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.app-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .9rem;
+  padding: 1rem;
+}
+
+.app-card h3 {
+  margin: 0 0 .35rem;
+}
+
+.app-card p {
+  margin: 0 0 .55rem;
+  color: #cbd5e1;
+}
+
+.app-meta {
+  font-size: .88rem;
+  color: #94a3b8;
+}
+
+.app-actions {
+  display: grid;
+  gap: .55rem;
+}
+
+.app-actions code {
+  font-size: .82rem;
+  color: #93c5fd;
+  border: 1px solid #334155;
+  background: #020617;
+  border-radius: .55rem;
+  padding: .45rem .55rem;
+  overflow-wrap: anywhere;
+}
+
+.widget-card {
+  display: grid;
+  gap: 1rem;
+}
+
+#hiveagilectl-subscription-widget {
+  min-height: 110px;
+}
+
+@media (max-width: 640px) {
+  .catalog-toolbar {
+    grid-template-columns: 1fr;
+  }
+}

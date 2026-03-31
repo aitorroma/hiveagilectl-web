@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HiveAgileCTL | Alternativas open source autohospedadas</title>
-  <meta name="description" content="Calcula tu ahorro SaaS, elige plan y despliega con un comando. HiveAgileCTL simplifica la migración a open source autohospedado." />
-  <meta name="keywords" content="open source, autohospedado, alternativas saas, calculadora ahorro saas, hiveagilectl" />
+  <meta name="description" content="Calcula tu ahorro SaaS, activa pago conectado y despliega alternativas open source con un comando." />
+  <meta name="keywords" content="open source, autohospedado, alternativas saas, calculadora ahorro saas, hiveagilectl, docker" />
   <meta name="theme-color" content="#0b1220" />
   <meta property="og:title" content="HiveAgileCTL | Ahorra SaaS y despliega hoy" />
-  <meta property="og:description" content="Calculadora de ahorro, planes accionables y comando de instalación visible desde el hero." />
+  <meta property="og:description" content="Calculadora de ahorro, planes con pago conectado y catálogo Docker listo para instalar." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hiveagilectl.sh" />
   <meta property="og:image" content="https://hiveagilectl.sh/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="HiveAgileCTL | Open source sin fricción" />
-  <meta name="twitter:description" content="Compara coste real, activa plan y lanza con un comando." />
+  <meta name="twitter:description" content="Compara coste real, paga plan y lanza con un comando." />
   <meta name="twitter:image" content="https://hiveagilectl.sh/og-image.jpg" />
   <link rel="stylesheet" href="landing-v2.css" />
 </head>
@@ -25,9 +25,9 @@
 
   <main>
     <section class="hero">
-      <div class="chip">HiveAgileCTL · Monetización-first</div>
+      <div class="chip">HiveAgileCTL · Monetización restaurada</div>
       <h1>Ahorra en SaaS esta semana y despliega tu alternativa open source hoy.</h1>
-      <p class="lead">Compara coste real, elige plan y ejecuta el comando de instalación en minutos.</p>
+      <p class="lead">Compara coste real, elige plan con pago conectado y ejecuta el comando de instalación en minutos.</p>
 
       <div class="install-command" aria-label="Comando de instalación">
         <code id="installCommand">/bin/bash -c "$(curl -fsSL https://get.hiveagilectl.sh/)"</code>
@@ -37,6 +37,7 @@
       <div class="cta-row">
         <a class="btn btn-primary" data-event="click_cta_primary" href="#calculadora">Calcular ahorro y empezar</a>
         <a class="btn btn-secondary" data-event="click_cta_secondary" href="#planes">Ver planes</a>
+        <a class="btn btn-secondary" data-event="click_cta_payment_widget" href="#suscripcion">Ir a pago seguro</a>
       </div>
       <ul class="hero-metrics">
         <li><strong>&lt; 7 días</strong><span>tiempo medio a producción</span></li>
@@ -60,7 +61,18 @@
         <button type="submit" class="btn btn-primary">Calcular</button>
       </form>
       <div id="calculatorResult" class="result" aria-live="polite"></div>
-      <a id="recommendedPlanCta" class="btn btn-secondary result-cta" href="mailto:hello@hiveagilectl.sh?subject=Plan%20recomendado%20HiveAgileCTL">Ir al plan recomendado</a>
+      <a id="recommendedPlanCta" class="btn btn-secondary result-cta" href="#suscripcion">Ir al plan recomendado</a>
+    </section>
+
+    <section class="section" id="automatizacion">
+      <h2>Automatización en acción</h2>
+      <p class="section-copy">Vídeo real del flujo de despliegue para ver la velocidad operativa antes de comprar.</p>
+      <div class="video-wrap card">
+        <video controls autoplay muted loop playsinline>
+          <source src="https://nimbox360.com/hiveagilectl.mp4" type="video/mp4">
+          Tu navegador no soporta vídeo HTML5.
+        </video>
+      </div>
     </section>
 
     <section class="section" id="como-funciona">
@@ -83,7 +95,7 @@
 
     <section class="section soft" id="planes">
       <h2>Planes conectados a acción</h2>
-      <p class="section-copy">Todos los CTAs van a destino real y registran evento de conversión.</p>
+      <p class="section-copy">El pago vuelve a estar conectado en el widget oficial y todos los CTA registran evento.</p>
       <div class="pricing-grid">
         <article class="price-card">
           <h3>Free</h3>
@@ -100,11 +112,11 @@
           <h3>Pro</h3>
           <p class="price">29€<span>/mes</span></p>
           <ul>
+            <li>Pago conectado por Stripe</li>
             <li>Soporte prioritario</li>
-            <li>Playbooks de incidencias</li>
             <li>Acompañamiento de despliegue</li>
           </ul>
-          <a class="btn btn-primary" data-event="click_plan_pro" href="mailto:hello@hiveagilectl.sh?subject=Alta%20Plan%20Pro%2029%E2%82%AC%2Fmes">Activar Pro</a>
+          <a class="btn btn-primary" data-event="click_plan_pro" href="#suscripcion">Activar Pro</a>
         </article>
         <article class="price-card">
           <h3>Member (anual)</h3>
@@ -114,8 +126,49 @@
             <li>Soporte prioritario extendido</li>
             <li>Acceso a automatizaciones</li>
           </ul>
-          <a class="btn btn-secondary" data-event="click_plan_member" href="mailto:hello@hiveagilectl.sh?subject=Alta%20Plan%20Member%20Anual">Activar Member</a>
+          <a class="btn btn-secondary" data-event="click_plan_member" href="#suscripcion">Activar Member</a>
         </article>
+      </div>
+    </section>
+
+    <section class="section" id="docker-catalogo">
+      <h2>Catálogo Docker listo para instalar</h2>
+      <p class="section-copy">Se restaura el catálogo con búsqueda por nombre o categoría, conectado a <code>dockers.json</code>.</p>
+      <div class="catalog-toolbar card">
+        <input id="searchApps" type="search" placeholder="Buscar aplicación (ej. n8n, invoiceninja, bitwarden)" />
+        <select id="categoryFilter">
+          <option value="">Todas las categorías</option>
+        </select>
+      </div>
+      <div id="appsCounter" class="apps-counter">Cargando catálogo...</div>
+      <div id="appsGrid" class="apps-grid"></div>
+    </section>
+
+    <section class="section soft" id="perfiles">
+      <h2>Perfiles profesionales para tu operación</h2>
+      <p class="section-copy">Añadimos perfiles de alto nivel para cubrir arquitectura, seguridad y crecimiento.</p>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Arquitecto de Plataforma</h3>
+          <p>Diseña la migración SaaS → open source, estandariza despliegues y reduce deuda técnica.</p>
+        </article>
+        <article class="card">
+          <h3>SRE / DevOps Senior</h3>
+          <p>Garantiza uptime, backups, monitoreo y planes de rollback para operaciones sin sorpresas.</p>
+        </article>
+        <article class="card">
+          <h3>Growth Engineer</h3>
+          <p>Conecta analítica, embudos y automatización comercial para convertir ahorro en ingresos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="suscripcion">
+      <h2>Pago conectado (widget oficial)</h2>
+      <p class="section-copy">Checkout activo vía <strong>licence.hiveagilectl.sh</strong>. Si el widget no carga, usa el enlace de respaldo.</p>
+      <div class="card widget-card">
+        <div id="hiveagilectl-subscription-widget"></div>
+        <a class="btn btn-secondary" data-event="click_payment_backup" href="https://licence.hiveagilectl.sh" target="_blank" rel="noopener">Abrir portal de pago</a>
       </div>
     </section>
 
@@ -130,24 +183,14 @@
         </div>
       </div>
     </section>
-
-    <section class="section soft" id="faq">
-      <h2>FAQ rápida</h2>
-      <details>
-        <summary>¿Necesito conocimientos técnicos avanzados?</summary>
-        <p>No. Te guiamos con un flujo claro y automatizaciones para operación diaria.</p>
-      </details>
-      <details>
-        <summary>¿Cómo evitáis caídas en el cambio?</summary>
-        <p>Aplicamos despliegue por fases, backups previos, checks de salud y rollback documentado.</p>
-      </details>
-    </section>
   </main>
 
   <footer>
     <p>© 2026 HiveAgileCTL · Operación segura, despliegue simple y pricing transparente.</p>
   </footer>
 
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://licence.hiveagilectl.sh/static/js/widget.js"></script>
   <script>
     (function () {
       function trackEvent(eventName, payload) {
@@ -191,15 +234,14 @@
         if (saasCost <= 60) tier = 'free';
         if (saasCost >= 220) tier = 'member';
 
-        const ctaByTier = {
-          free: 'https://hiveagilectl.sh/?utm_source=landing&utm_medium=calculator&utm_campaign=plan_free#instalacion',
-          pro: 'mailto:hello@hiveagilectl.sh?subject=Alta%20Plan%20Pro%20desde%20calculadora',
-          member: 'mailto:hello@hiveagilectl.sh?subject=Alta%20Plan%20Member%20desde%20calculadora'
-        };
-
         result.innerHTML = `Coste estimado con HiveAgileCTL: <strong>${estimatedCost}€/mes</strong> · Ahorro estimado: <strong>${savings}€/mes (${savingsPct}%)</strong> · Plan recomendado: <strong>${tier.toUpperCase()}</strong>.`;
-        recommendedPlanCta.href = ctaByTier[tier];
         recommendedPlanCta.dataset.event = `click_plan_${tier}`;
+
+        if (tier === 'free') {
+          recommendedPlanCta.href = 'https://hiveagilectl.sh/?utm_source=landing&utm_medium=calculator&utm_campaign=plan_free#instalacion';
+        } else {
+          recommendedPlanCta.href = '#suscripcion';
+        }
 
         trackEvent('calculator_submit', {
           saas_cost: saasCost,
@@ -209,6 +251,92 @@
           recommended_tier: tier
         });
       });
+
+      const appsGrid = document.getElementById('appsGrid');
+      const appsCounter = document.getElementById('appsCounter');
+      const searchApps = document.getElementById('searchApps');
+      const categoryFilter = document.getElementById('categoryFilter');
+      let allApps = [];
+
+      function renderApps() {
+        const term = (searchApps.value || '').toLowerCase().trim();
+        const category = categoryFilter.value;
+        const filtered = allApps.filter((app) => {
+          const haystack = `${app.nombre || ''} ${app.descripcion || ''} ${app.categoria || ''}`.toLowerCase();
+          const termOk = !term || haystack.includes(term);
+          const catOk = !category || app.categoria === category;
+          return termOk && catOk;
+        });
+
+        appsCounter.textContent = `${filtered.length} aplicaciones visibles de ${allApps.length} totales.`;
+        appsGrid.innerHTML = '';
+
+        filtered.slice(0, 24).forEach((app) => {
+          const card = document.createElement('article');
+          card.className = 'app-card';
+          card.innerHTML = `
+            <h3>${app.nombre || 'Aplicación'}</h3>
+            <p>${app.descripcion || 'Sin descripción disponible.'}</p>
+            <p class="app-meta">Categoría: ${app.categoria || 'General'}</p>
+            <div class="app-actions">
+              ${app.enlace_docker ? `<a class="btn btn-secondary" data-event="click_docker_link" href="${app.enlace_docker}" target="_blank" rel="noopener">Docker Hub</a>` : ''}
+              ${app.enlace_github ? `<a class="btn btn-secondary" data-event="click_github_link" href="${app.enlace_github}" target="_blank" rel="noopener">GitHub</a>` : ''}
+              <code>hiveagilectl install ${app.containername || 'app'}</code>
+            </div>
+          `;
+          appsGrid.appendChild(card);
+        });
+      }
+
+      fetch('https://raw.githubusercontent.com/aitorroma/hiveagilectl-bin/refs/heads/main/dockers.json')
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .then((apps) => {
+          allApps = Array.isArray(apps) ? apps : [];
+          const categories = Array.from(new Set(allApps.map((a) => a.categoria).filter(Boolean))).sort();
+          categories.forEach((cat) => {
+            const opt = document.createElement('option');
+            opt.value = cat;
+            opt.textContent = cat;
+            categoryFilter.appendChild(opt);
+          });
+          renderApps();
+          trackEvent('docker_catalog_loaded', { total_apps: allApps.length });
+        })
+        .catch((error) => {
+          appsCounter.textContent = 'No se pudo cargar el catálogo en este momento.';
+          appsGrid.innerHTML = `<p class="section-copy">Error: ${error.message}</p>`;
+          trackEvent('docker_catalog_error', { message: error.message });
+        });
+
+      searchApps.addEventListener('input', renderApps);
+      categoryFilter.addEventListener('change', renderApps);
+
+      if (typeof window.initHiveAgileCTLWidget === 'function') {
+        window.initHiveAgileCTLWidget({
+          stripeKey: 'pk_live_51RNCJHIVSG10FOlSIZfRCb61XKgeClMBSySIoVNXCjzbDKQHTKmxV0UdaIEq4V4MXg55VAaxr49moxkrtr60uoBI00XftVUuBA',
+          monthlyPriceId: 'price_1RNCllIVSG10FOlSp2PuUBUu',
+          yearlyPriceId: 'price_1RNCjCIVSG10FOlSkaTcW2n0',
+          apiUrl: 'https://licence.hiveagilectl.sh',
+          useCorsProxy: true
+        });
+        trackEvent('subscription_widget_initialized');
+      } else {
+        setTimeout(() => {
+          if (typeof window.initHiveAgileCTLWidget === 'function') {
+            window.initHiveAgileCTLWidget({
+              stripeKey: 'pk_live_51RNCJHIVSG10FOlSIZfRCb61XKgeClMBSySIoVNXCjzbDKQHTKmxV0UdaIEq4V4MXg55VAaxr49moxkrtr60uoBI00XftVUuBA',
+              monthlyPriceId: 'price_1RNCllIVSG10FOlSp2PuUBUu',
+              yearlyPriceId: 'price_1RNCjCIVSG10FOlSkaTcW2n0',
+              apiUrl: 'https://licence.hiveagilectl.sh',
+              useCorsProxy: true
+            });
+            trackEvent('subscription_widget_initialized_delayed');
+          }
+        }, 1200);
+      }
     })();
   </script>
 </body>
